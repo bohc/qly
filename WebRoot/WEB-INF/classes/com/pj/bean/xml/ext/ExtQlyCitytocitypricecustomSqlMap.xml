@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlycitytocitypricecustom">
+  <typeAlias alias="QlyCitytocitypricecustom" type="com.pj.bean.QlyCitytocitypricecustom"/>
+  <typeAlias alias="ExtQlyCitytocitypricecustom" type="com.pj.bean.extend.ExtQlyCitytocitypricecustom"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyCitytocitypricecustom" parameterClass="QlyCitytocitypricecustom"> 
+    <include refid="qlycitytocitypricecustom.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyCitytocitypricecustom">
+    <include refid="qlycitytocitypricecustom.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyCitytocitypricecustom">
+    <include refid="qlycitytocitypricecustom.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyCitytocitypricecustom">
+    <include refid="qlycitytocitypricecustom.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlycitytocitypricecustom">
+    <include refid="qlycitytocitypricecustom.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyCitytocitypricecustom" parameterClass="ExtQlyCitytocitypricecustom"> 
+    <include refid="qlycitytocitypricecustom.bhc_getAllList"/>
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid"><isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual></isNotEmpty>
+      <isNotEmpty prepend=" and " property="fromcityjm">left(fromcityjm,length(#fromcityjm#)) = #fromcityjm:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyCitytocitypricecustom"> 
+    <include refid="qlycitytocitypricecustom.bhc_getAllCount"/>
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid"><isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual></isNotEmpty>
+      <isNotEmpty prepend=" and " property="fromcityjm">left(fromcityjm,length(#fromcityjm#)) = #fromcityjm:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyCitytocitypricecustom" parameterClass="ExtQlyCitytocitypricecustom"> 
+    <include refid="qlycitytocitypricecustom.bhc_getAllListSelect"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyCitytocitypricecustom"> 
+    <include refid="qlycitytocitypricecustom.bhc_getAllCountSelect"/>
+  </select>
+  <parameterMap id="swapParameters"  class="java.util.HashMap">  
+	  	<parameter property="lid" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="lname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>  
+	  	<parameter property="cnt" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="fc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>  
+	  	<parameter property="price" jdbcType="DOUBLE" javaType="java.lang.Double" mode="IN"/>  
+	  	<parameter property="childrenprice" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="tra" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="vehiclecomeseattype" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="vehiclecometime" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="vehiclebacktype" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="vehiclebackseattype" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="vehiclebacktime" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="enman" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	  	<parameter property="result" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+  </parameterMap>
+  <procedure id="addCityToCityPrice" parameterMap="swapParameters" >
+  		{call addCityToCityPriceCustom (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}
+  </procedure>
+  	
+  <parameterMap id="copyprice"  class="java.util.HashMap">  
+	  	<parameter property="lid" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="tlen" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="tid" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>  
+	  	<parameter property="pdif" jdbcType="int" javaType="java.lang.Integer" mode="IN"/>  
+	  	<parameter property="enman" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+  	</parameterMap>
+  	<procedure id="copyCityToCityPrice" parameterMap="copyprice" >
+  		{call copyCityToCityPriceCustom (?, ?, ?, ?, ?)}
+  	</procedure>
+  	<update id="update_price" parameterClass="ExtQlyCitytocitypricecustom">
+  		update qly.citytocitypricecustom set price=price+$pricedif$
+  		<dynamic prepend="where">
+  			<isNotEmpty prepend=" and " property="lineid"><isNotEqual property="lineid" compareValue="0">lineid = $lineid$</isNotEqual></isNotEmpty>
+  			<isNotEmpty prepend=" and " property="tolineid">fromcityjm in ($tolineid$)</isNotEmpty>
+  		</dynamic>
+  	</update>
+  	
+  	<select id="bhc_selectByFromAndToCity" resultClass="QlyCitytocitypricecustom" parameterClass="ExtQlyCitytocitypricecustom"> 
+		select linename,lineid,fromcityname,traficaltype,vehiclecomeseattype, vehiclecometime, price,childrenprice, vehiclebacktype, vehiclebackseattype, vehiclebacktime, entime, enman, fromcityjm, fromcitypy from qly.citytocitypricecustom
+		where lineid = #lineid# and fromcityjm = #fromcityjm# 
+		limit 1
+	</select>
+</sqlMap>

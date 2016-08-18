@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyuserinfo">
+  <typeAlias alias="QlyUserinfo" type="com.pj.bean.QlyUserinfo"/>
+  <typeAlias alias="ExtQlyUserinfo" type="com.pj.bean.extend.ExtQlyUserinfo"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyUserinfo" parameterClass="QlyUserinfo">select p.userid userid,p.username username,p.pwd pwd,p.type type,p.realname realname,p.compid compid,p.cname cname,p.acode acode,p.cityname cityname from qly.userinfo p where userid = #userid:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyUserinfo">insert into qly.userinfo(userid,username,pwd,type,realname,compid,cname,acode,cityname) values (#userid:INT#,#username:VARCHAR#,#pwd:VARCHAR#,#type:VARCHAR#,#realname:VARCHAR#,#compid:INT#,#cname:VARCHAR#,#acode:VARCHAR#,#cityname:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="userid">SELECT LAST_INSERT_ID() as userid</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyUserinfo">update qly.userinfo 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="username">username = #username:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="pwd">pwd = #pwd:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="type">type = #type:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="realname">realname = #realname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="compid">compid = #compid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="cname">cname = #cname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="acode">acode = #acode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="cityname">cityname = #cityname:VARCHAR#</isNotEmpty> 
+    </dynamic> where userid = #userid:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyUserinfo">delete from qly.userinfo where userid = #userid:INT#</delete>
+  <select id="bhc_getAllList" resultClass="QlyUserinfo" parameterClass="ExtQlyUserinfo">select p.userid userid,p.username username,p.pwd pwd,p.type type,p.realname realname,p.compid compid,p.cname cname,p.acode acode,p.cityname cityname from qly.userinfo p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="username">username like #username:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyUserinfo">select count(*) from qly.userinfo 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="username">username like #username:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_login" resultClass="QlyUserinfo" parameterClass="java.util.HashMap">
+		select p.userid userid,p.username username,p.pwd pwd,p.type type,p.realname realname,p.compid compid,p.cname cname,p.acode acode,p.cityname cityname from qly.userinfo p 
+		where username = #username# and pwd=#pwd#
+	</select>
+</sqlMap>

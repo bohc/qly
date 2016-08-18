@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlyflyticket">
+  <typeAlias alias="QlyFlyticket" type="com.pj.bean.QlyFlyticket"/>
+  <typeAlias alias="ExtQlyFlyticket" type="com.pj.bean.extend.ExtQlyFlyticket"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyFlyticket" parameterClass="QlyFlyticket"> 
+    <include refid="qlyflyticket.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyFlyticket">
+    <include refid="qlyflyticket.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" type="post" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyFlyticket">
+    <include refid="qlyflyticket.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyFlyticket">
+    <include refid="qlyflyticket.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlyflyticket">
+    <include refid="qlyflyticket.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyFlyticket" parameterClass="ExtQlyFlyticket"> 
+    <include refid="qlyflyticket.bhc_getAllList"/>  
+    <dynamic prepend=" where "></dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyFlyticket"> 
+    <include refid="qlyflyticket.bhc_getAllCount"/>  
+    <dynamic prepend=" where "></dynamic> 
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyFlyticket" parameterClass="ExtQlyFlyticket"> 
+    <include refid="qlyflyticket.bhc_getAllListSelect"/>  
+    <dynamic prepend=" where "></dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyFlyticket"> 
+    <include refid="qlyflyticket.bhc_getAllCountSelect"/>  
+    <dynamic prepend=" where "></dynamic> 
+  </select>
+  <select id="bhc_getAirlineByLine" resultClass="QlyFlyticket" parameterClass="ExtQlyFlyticket">
+	select DATE_FORMAT(starttime,'%Y-%m-%d') starttime,startcityjm,arrivecityjm,avg(ticketprice) ticketprice,avg(avgticketprice) avgticketprice,typetime    
+	from qly.flyticket where (startcityjm=$startcityjm$ and arrivecityjm=$arrivecityjm$)
+	 group by DATE_FORMAT(starttime,'%Y-%m-%d'),startcityjm,typetime 
+	order by starttime,ticketprice ASC
+  </select>
+  <select id="bhc_getAirlineByCityAndTime" resultClass="QlyFlyticket" parameterClass="ExtQlyFlyticket">
+	select * from qly.flyticket where ((startcityjm=$startcityjm$ and arrivecityjm=$arrivecityjm$) or (arrivecityjm=$startcityjm$ and startcityjm=$arrivecityjm$))
+	and DATE_FORMAT(starttime,'%Y-%m-%d')>=DATE_FORMAT(now(),'%Y-%m-%d') and typetime=#typetime#
+	order by DATE_FORMAT(starttime,'%Y-%m-%d'),startcityjm,ticketprice ASC
+  </select>
+</sqlMap>

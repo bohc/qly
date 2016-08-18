@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <!--这个一个注释 -->
+  <include file="struts-default.xml"/>
+  <package name="web" extends="struts-default">
+    <action name="login" class="com.pj.action.LoginAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <action name="logout" class="com.pj.action.LoginAction" method="logout">
+      <result>/WEB-INF/login.jsp</result>
+    </action>
+    <!--路线打印-->
+    <action name="px" class="com.pj.action.PrintLineAsXml">
+      <result>${pagename}</result>
+      <result name="lines">/WEB-INF/lines.jsp</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+      <result type="stream" name="ajax-success"> 
+        <param name="contentType">text/html</param>  
+        <param name="inputName">inputStream</param> 
+      </result>
+    </action>
+  </package>
+  <package name="website" namespace="/" extends="struts-default">
+    <interceptors>
+      <interceptor class="com.Interceptor.AuthorityInterceptor" name="authority"/>
+      <interceptor-stack name="mydefault">
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="authority"/>
+      </interceptor-stack>
+    </interceptors>
+    <default-interceptor-ref name="mydefault"/>
+    <global-results>
+      <result name="login" type="redirect">login!login.do</result>
+      <result name="drugerror">/WEB-INF/drugerror.html</result>
+    </global-results>
+    <action name="fupload" class="com.pj.action.FileUploadAction"/>
+    <action name="index" class="com.pj.action.IndexAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--系统功能列表-->
+    <action name="qlytbfunctionlist" class="com.pj.action.QlyTbfunctionlistAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--系统表 用户表-->
+    <action name="qlyuserinfo" class="com.pj.action.QlyUserinfoAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--线路-->
+    <action name="qlyline" class="com.pj.action.QlyLineAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+      <result type="stream" name="ajax-success"> 
+        <param name="contentType">text/html</param>  
+        <param name="inputName">inputStream</param> 
+      </result>
+    </action>
+    <!--线路行程安排-->
+    <action name="qlylinetravel" class="com.pj.action.QlyLinetravelAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--景点-->
+    <action name="qlyview" class="com.pj.action.QlyViewAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--地区表-->
+    <action name="qlytarea" class="com.pj.action.QlyTareaAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--景点分类-->
+    <action name="qlyviewtype" class="com.pj.action.QlyViewtypeAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--线路行程安排-->
+    <action name="qlytravel" class="com.pj.action.QlyTravelAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--行程分类-->
+    <action name="qlytraveltype" class="com.pj.action.QlyTraveltypeAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--各城市到达的价格-->
+    <action name="qlycitytocityprice" class="com.pj.action.QlyCitytocitypriceAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--景点图片-->
+    <action name="qlyviewpic" class="com.pj.action.QlyViewpicAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--线路主图-->
+    <action name="qlylinepic" class="com.pj.action.QlyLinepicAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+    </action>
+    <!--各城市到达的价格-->
+    <action name="qlycitytocitypricecustom" class="com.pj.action.QlyCitytocitypricecustomAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction"> 
+        <param name="actionName">${pagename}</param> 
+      </result>
+      <result type="stream" name="ajax-success"> 
+        <param name="contentType">text/html</param>  
+        <param name="inputName">inputStream</param> 
+      </result>
+    </action>
+    <!--调整价格条件-->
+    <action name="qlyregulatepricecondition" class="com.pj.action.QlyRegulatepriceconditionAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction">
+        <param name="actionName">${pagename}</param>
+      </result>
+    </action>
+    <!--自定义交通工具价格-->
+    <action name="qlycustomviehcleprice" class="com.pj.action.QlyCustomviehclepriceAction">
+      <result>${pagename}</result>
+      <result name="rsuccess" type="redirectAction">${pagename}</result>
+      <result name="redirectAction">
+        <param name="actionName">${pagename}</param>
+      </result>
+      <result type="stream" name="ajax-success">
+        <param name="contentType">text/html</param>
+        <param name="inputName">inputStream</param>
+      </result>
+    </action>
+  </package>
+</struts>

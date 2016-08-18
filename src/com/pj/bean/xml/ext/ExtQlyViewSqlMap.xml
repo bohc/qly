@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlyview">
+  <typeAlias alias="QlyView" type="com.pj.bean.QlyView"/>
+  <typeAlias alias="ExtQlyView" type="com.pj.bean.extend.ExtQlyView"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyView" parameterClass="QlyView"> 
+    <include refid="qlyview.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyView">
+    <include refid="qlyview.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyView">
+    <include refid="qlyview.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyView">
+    <include refid="qlyview.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlyview">
+    <include refid="qlyview.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyView" parameterClass="ExtQlyView"> 
+    <include refid="qlyview.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyView"> 
+    <include refid="qlyview.bhc_getAllCount"/>
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyView" parameterClass="ExtQlyView">select p.id id,p.viewid viewid,p.viewname viewname,p.typeid typeid,p.typename typename,p.subviewname subviewname,p.cityid cityid,p.cityname cityname,p.adress adress,p.level level,p.viewtype viewtype,p.suitable suitable,p.viewpic viewpic,p.linkway linkway,p.vdescribe vdescribe,p.introduce introduce,p.traffic traffic,p.ticketnotice ticketnotice,p.speshop speshop,p.spefood spefood,p.state state,p.ordernum ordernum,p.cdate cdate,p.userid userid,p.username username,p.videourl videourl,p.isrecommend isrecommend,p.clickcount clickcount,p.ishot ishot,p.istop istop,p.inorout inorout from qly.view p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="viewname">viewname like #viewname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="typename">typename like #typename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="cityname">cityname like #cityname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyView">select count(*) from qly.view 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="viewname">viewname like #viewname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="typename">typename like #typename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="cityname">cityname like #cityname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_selectInKey" resultClass="QlyView" parameterClass="ExtQlyView">
+  	select p.id id,p.viewname viewname,p.typeid typeid,p.typename typename,p.subviewname subviewname,p.cityid cityid,p.cityname cityname,p.viewid viewid,p.adress adress,p.level level,p.viewtype viewtype,p.suitable suitable,p.viewpic viewpic,p.vdescribe vdescribe,p.introduce introduce,p.traffic traffic,p.ticketnotice ticketnotice,p.speshop speshop,p.spefood spefood,p.state state,p.isrecommend isrecommend,p.inorout inorout,p.ishot ishot,p.istop istop,p.linkway linkway,p.ordernum ordernum,p.cdate cdate,p.userid userid,p.username username,p.videourl videourl,p.clickcount clickcount from qly.view p 
+  	where id in ($cond$)
+  	</select>
+  
+  
+</sqlMap>

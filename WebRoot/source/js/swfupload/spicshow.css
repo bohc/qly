@@ -1,0 +1,94 @@
+
+.showview {
+	color: #555;
+	line-height: 1.231;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	font-family: Arial, SimSun, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size-adjust: none;
+	font-stretch: normal;
+}
+
+.showview {
+	text-align: center;
+	padding-top: 8px;
+	clear: both;
+	margin-bottom: 8px;
+	width: 98%;
+}
+
+.showview dl, .showview dl dt, .showview dl dd {
+	padding: 0px;
+	margin: 0px;
+}
+
+.showview dl dt img {
+	width: 118px;
+	height: 80px;
+	border-color: #6f6d6e;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.showview dl dd input {
+	width: 120px;
+	height: 18px;
+	padding: 0px;
+	margin: 0px;
+	outline-width: 0px;
+	outline-style: none;
+	outline-color: invert;
+}
+
+.showview dl a {
+	color: #0069ca;
+	text-decoration: none;
+	outline-width: 0px;
+	outline-style: none;
+	outline-color: invert;
+}
+
+.showview dl {
+	width: 122px;
+	margin-right: 22px;
+	margin-bottom: 22px;
+	float: left;
+	display: inline;
+}
+
+.showview dl {
+	margin-right: 11px;
+}
+
+.showview dl dd a img {
+	vertical-align: bottom;
+	border-color: currentColor;
+	border-width: 0px;
+	border-style: none;
+}
+
+.showview .delete, .showview .desc {
+	margin-top: 2px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+.showview .delete {
+	display:block;
+}
+
+.showview dl{
+	margin-bottom:4px;
+	border: 1px solid grey;
+}

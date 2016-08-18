@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN" "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+   <tlib-version>1.0</tlib-version>
+   <jsp-version>1.2</jsp-version>
+   <short-name>funtag</short-name>
+   <uri>com.tag.FunTag</uri>
+   <display-name>exitsFunTag</display-name>
+   <description><![CDATA[Display eXtremeComponents information.]]></description>
+   <tag>
+      <name>exitsfun</name>
+      <tag-class>com.tag.FunTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>exitsTag</display-name>
+      <description><![CDATA[The container which holds all the column specific information. A copy of each column will be fed to the Model.]]></description>
+      <attribute>
+         <name>funid</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description><![CDATA[column.]]></description>
+      </attribute>
+      <attribute>
+         <name>funlist</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description><![CDATA[column.]]></description>
+      </attribute>
+   </tag>
+   
+   <tag>
+      <name>compare</name>
+      <tag-class>com.tag.EqualStringTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>compare</display-name>
+      <description></description>
+      <attribute>
+         <name>de</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>source</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+   <tag>
+      <name>notcompare</name>
+      <tag-class>com.tag.NotEqualStringTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>not compare</display-name>
+      <description></description>
+      <attribute>
+         <name>de</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>source</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+   <tag>
+      <name>subString</name>
+      <tag-class>com.tag.SubStringTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>not compare</display-name>
+      <description></description>
+      <attribute>
+         <name>str</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>start</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>end</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+   <tag>
+      <name>subStringFix</name>
+      <tag-class>com.tag.SubStringTagFix</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>not compare</display-name>
+      <description></description>
+      <attribute>
+         <name>str</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>start</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>end</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+   
+   <tag>
+      <name>actiondirect</name>
+      <tag-class>com.tag.ActionDirectFunTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>not compare</display-name>
+      <description></description>
+      <attribute>
+         <name>rflag</name>
+         <required>flase</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>mf</name>
+         <required>flase</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+      <attribute>
+         <name>params</name>
+         <required>false</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+   
+   <tag>
+      <name>replace</name>
+      <tag-class>com.tag.StringReplaceTag</tag-class>
+      <body-content>JSP</body-content>
+      <display-name>not compare</display-name>
+      <description></description>
+      <attribute>
+         <name>str</name>
+         <required>true</required>
+         <rtexprvalue>true</rtexprvalue>
+         <description></description>
+      </attribute>
+   </tag>
+</taglib>

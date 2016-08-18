@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlycustomviehcleprice">
+  <sql id="bhc_select">select p.id id,p.traficaltype traficaltype,p.seattype,p.price price,p.childrenprice,p.fromcityname fromcityname,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy,p.tocityname tocityname,p.tocityjm tocityjm,p.tocitypy tocitypy,p.entime entime,p.enman enman from qly.customviehcleprice p</sql>
+  <sql id="bhc_insert">insert into qly.customviehcleprice(traficaltype,seattype,price,childrenprice,fromcityname,fromcityjm,fromcitypy,tocityname,tocityjm,tocitypy,entime,enman) values (#traficaltype:VARCHAR#,#seattype:VARCHAR#,#price:DOUBLE#,#childrenprice:DOUBLE#,#fromcityname:VARCHAR#,#fromcityjm:VARCHAR#,#fromcitypy:VARCHAR#,#tocityname:VARCHAR#,#tocityjm:VARCHAR#,#tocitypy:VARCHAR#,#entime:DATETIME#,#enman:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.customviehcleprice 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="traficaltype">traficaltype = #traficaltype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="seattype">seattype = #seattype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="price">price = #price:DOUBLE#</isNotEmpty>  
+      <isNotEmpty prepend="," property="childrenprice">childrenprice = #childrenprice:DOUBLE#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityname">fromcityname = #fromcityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityjm">fromcityjm = #fromcityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcitypy">fromcitypy = #fromcitypy:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocityname">tocityname = #tocityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocityjm">tocityjm = #tocityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocitypy">tocitypy = #tocitypy:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="entime">entime = #entime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="enman">enman = #enman:VARCHAR#</isNotEmpty> 
+    </dynamic>
+  </sql>
+  <sql id="bhc_delete">delete from qly.customviehcleprice</sql>
+  <sql id="bhc_delete_batch">delete from qly.customviehcleprice where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.traficaltype traficaltype,p.seattype,p.price price,p.childrenprice,p.fromcityname fromcityname,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy,p.tocityname tocityname,p.tocityjm tocityjm,p.tocitypy tocitypy,p.entime entime,p.enman enman from qly.customviehcleprice p</sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.customviehcleprice p</sql>
+  <sql id="bhc_getAllListSelect">select p.id id,p.traficaltype traficaltype,p.seattype,p.price price,p.childrenprice,p.fromcityname fromcityname,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy,p.tocityname tocityname,p.tocityjm tocityjm,p.tocitypy tocitypy,p.entime entime,p.enman enman from qly.customviehcleprice p</sql>
+  <sql id="bhc_getAllCountSelect">select count(*) from qly.customviehcleprice p</sql>
+</sqlMap>

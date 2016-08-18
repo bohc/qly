@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlylinetravel">
+  <typeAlias alias="QlyLinetravel" type="com.pj.bean.QlyLinetravel"/>
+  <typeAlias alias="ExtQlyLinetravel" type="com.pj.bean.extend.ExtQlyLinetravel"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyLinetravel" parameterClass="QlyLinetravel">select p.id id,p.ltid ltid,p.lineid lineid,p.linename linename,p.daynum daynum,p.travelcode travelcode,p.traveltitle traveltitle,p.viewid viewid,p.viewcontent viewcontent,p.stay,p.hotel,p.innfeature,p.mark mark,p.vehicle vehicle,vehiclesprice,vehiclespricetitle from qly.linetravel p where id = #id:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyLinetravel">insert into qly.linetravel(ltid,lineid,linename,daynum,travelcode,traveltitle,viewid,viewcontent,stay,hotel,innfeature,mark,vehicle,vehiclesprice,vehiclespricetitle) values (#ltid:INT#,#lineid:VARCHAR#,#linename:VARCHAR#,#daynum:INT#,#travelcode:VARCHAR#,#traveltitle:VARCHAR#,#viewid:VARCHAR#,#viewcontent:VARCHAR#,#stay:VARCHAR#,#hotel:VARCHAR#,#innfeature:VARCHAR#,#mark:VARCHAR#,#vehicle:VARCHAR#,#vehiclesprice:VARCHAR#,#vehiclespricetitle:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyLinetravel">update qly.linetravel 
+  set vehiclesprice = #vehiclesprice:VARCHAR#,vehiclespricetitle = #vehiclespricetitle:VARCHAR#
+    <dynamic> 
+      <isNotEmpty prepend="," property="ltid">ltid = #ltid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="lineid">lineid = #lineid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linename">linename = #linename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="daynum">daynum = #daynum:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="travelcode">travelcode = #travelcode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="traveltitle">traveltitle = #traveltitle:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viewid">viewid = #viewid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viewcontent">viewcontent = #viewcontent:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="stay">stay = #stay:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="hotel">hotel = #hotel:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="innfeature">innfeature = #innfeature:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="mark">mark = #mark:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehicle">vehicle = #vehicle:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </update>
+  <update id="bhc_updateByLtId" parameterClass="QlyLinetravel">update qly.linetravel 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="lineid">lineid = #lineid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linename">linename = #linename:VARCHAR#</isNotEmpty>  
+    </dynamic> where ltid = #ltid:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyLinetravel">delete from qly.linetravel where id = #id:INT#</delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlylinetravel">delete from qly.linetravel where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyLinetravel" parameterClass="ExtQlyLinetravel">select p.id id,p.ltid ltid,p.lineid lineid,p.linename linename,p.daynum daynum,p.travelcode travelcode,p.traveltitle traveltitle,p.viewid viewid,p.viewcontent viewcontent, p.stay, p.hotel, p.innfeature, p.mark mark,p.vehicle vehicle from qly.linetravel p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="ltid">
+        <isNotEqual property="ltid" compareValue="0">ltid = #ltid:VARCHAR#</isNotEqual>
+      </isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyLinetravel">select count(*) from qly.linetravel 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="ltid">
+        <isNotEqual property="ltid" compareValue="0">ltid = #ltid:VARCHAR#</isNotEqual>
+      </isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_getListByLineId" resultClass="QlyLinetravel" parameterClass="QlyLinetravel">
+  	select p.id id,p.ltid ltid,p.lineid lineid,p.linename linename,p.daynum daynum,p.travelcode travelcode,p.traveltitle traveltitle,p.viewid viewid,p.viewcontent viewcontent,p.stay,p.hotel,p.innfeature,p.mark mark,p.vehicle vehicle,p.vehiclesprice,p.vehiclespricetitle from qly.linetravel p 
+    where ltid = $ltid$
+  </select>
+  
+</sqlMap>

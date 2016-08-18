@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlylinepic">
+  <typeAlias alias="QlyLinepic" type="com.pj.bean.QlyLinepic"/>
+  <typeAlias alias="ExtQlyLinepic" type="com.pj.bean.extend.ExtQlyLinepic"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyLinepic" parameterClass="QlyLinepic"> 
+    <include refid="qlylinepic.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyLinepic">
+    <include refid="qlylinepic.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyLinepic">
+    <include refid="qlylinepic.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyLinepic">
+    <include refid="qlylinepic.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlylinepic">
+    <include refid="qlylinepic.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyLinepic" parameterClass="ExtQlyLinepic"> 
+    <include refid="qlylinepic.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyLinepic"> 
+    <include refid="qlylinepic.bhc_getAllCount"/>
+  </select>
+  <select id="bhc_getListByLineid" resultClass="QlyLinepic" parameterClass="ExtQlyLinepic">
+  	select p.id id,p.lineid lineid,p.vpicfix vpicfix from qly.linepic p where p.lineid = #lineid:VARCHAR#
+  </select>
+  <delete id="bhc_delete_picbylineid" parameterClass="qlylinepic">
+    delete from qly.linepic where lineid = #lineid:INT#
+  </delete>
+</sqlMap>

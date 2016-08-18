@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlytraveltype">
+  <typeAlias alias="QlyTraveltype" type="com.pj.bean.QlyTraveltype"/>
+  <typeAlias alias="ExtQlyTraveltype" type="com.pj.bean.extend.ExtQlyTraveltype"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyTraveltype" parameterClass="QlyTraveltype">select p.id id,p.vtypename vtypename,p.vtypecode vtypecode,p.vparcode vparcode,p.vparname vparname,p.remark remark from qly.traveltype p where id = #id:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyTraveltype">insert into qly.traveltype(id,vtypename,vtypecode,vparcode,vparname,remark) values (#id:INT#,#vtypename:VARCHAR#,#vtypecode:VARCHAR#,#vparcode:VARCHAR#,#vparname:VARCHAR#,#remark:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyTraveltype">update qly.traveltype 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="vtypename">vtypename = #vtypename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vtypecode">vtypecode = #vtypecode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vparcode">vparcode = #vparcode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vparname">vparname = #vparname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="remark">remark = #remark:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyTraveltype">delete from qly.traveltype where id = #id:INT#</delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlytraveltype">delete from qly.traveltype where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyTraveltype" parameterClass="ExtQlyTraveltype">select p.id id,p.vtypename vtypename,p.vtypecode vtypecode,p.vparcode vparcode,p.vparname vparname,p.remark remark from qly.traveltype p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyTraveltype">select count(*) from qly.traveltype 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_getAllListSelect" resultClass="QlyTraveltype" parameterClass="ExtQlyTraveltype">select p.id id,p.vtypename vtypename,p.vtypecode vtypecode,p.vparcode vparcode,p.vparname vparname,p.remark remark from qly.traveltype p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyTraveltype">select count(*) from qly.traveltype 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+</sqlMap>

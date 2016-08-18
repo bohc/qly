@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyview">
+  <sql id="bhc_selectByPrimaryKey">select p.id id,p.viewname viewname,p.typeid typeid,p.typename typename,p.subviewname subviewname,p.cityid cityid,p.cityname cityname,p.viewid viewid,p.adress adress,p.level level,p.viewtype viewtype,p.suitable suitable,p.viewpic viewpic,p.vdescribe vdescribe,p.introduce introduce,p.traffic traffic,p.ticketnotice ticketnotice,p.speshop speshop,p.spefood spefood,p.state state,p.isrecommend isrecommend,p.inorout inorout,p.ishot ishot,p.istop istop,p.linkway linkway,p.ordernum ordernum,p.cdate cdate,p.userid userid,p.username username,p.videourl videourl,p.clickcount clickcount from qly.view p where id = #id:INT#</sql>
+  <sql id="bhc_insert">insert into qly.view(viewname,typeid,typename,subviewname,cityid,cityname,viewid,adress,level,viewtype,suitable,viewpic,vdescribe,introduce,traffic,ticketnotice,speshop,spefood,state,isrecommend,inorout,ishot,istop,linkway,ordernum,cdate,userid,username,videourl,clickcount) values (#viewname:VARCHAR#,#typeid:VARCHAR#,#typename:VARCHAR#,#subviewname:VARCHAR#,#cityid:VARCHAR#,#cityname:VARCHAR#,#viewid:VARCHAR#,#adress:VARCHAR#,#level:VARCHAR#,#viewtype:VARCHAR#,#suitable:VARCHAR#,#viewpic:VARCHAR#,#vdescribe:VARCHAR#,#introduce:TEXT#,#traffic:TEXT#,#ticketnotice:TEXT#,#speshop:TEXT#,#spefood:TEXT#,#state:INT#,#isrecommend:INT#,#inorout:INT#,#ishot:INT#,#istop:INT#,#linkway:VARCHAR#,#ordernum:INT#,#cdate:DATE#,#userid:VARCHAR#,#username:VARCHAR#,#videourl:VARCHAR#,#clickcount:SMALLINT#)</sql>
+  <sql id="bhc_update">update qly.view 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="viewname">viewname = #viewname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="typeid">typeid = #typeid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="typename">typename = #typename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="subviewname">subviewname = #subviewname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="cityid">cityid = #cityid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="cityname">cityname = #cityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viewid">viewid = #viewid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="adress">adress = #adress:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="level">level = #level:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viewtype">viewtype = #viewtype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="suitable">suitable = #suitable:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viewpic">viewpic = #viewpic:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vdescribe">vdescribe = #vdescribe:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="introduce">introduce = #introduce:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="traffic">traffic = #traffic:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ticketnotice">ticketnotice = #ticketnotice:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="speshop">speshop = #speshop:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="spefood">spefood = #spefood:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="state">state = #state:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="isrecommend">isrecommend = #isrecommend:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="inorout">inorout = #inorout:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ishot">ishot = #ishot:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="istop">istop = #istop:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linkway">linkway = #linkway:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ordernum">ordernum = #ordernum:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="cdate">cdate = #cdate:DATE#</isNotEmpty>  
+      <isNotEmpty prepend="," property="userid">userid = #userid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="username">username = #username:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="videourl">videourl = #videourl:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="clickcount">clickcount = #clickcount:SMALLINT#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.view where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.view where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.viewname viewname,p.typeid typeid,p.typename typename,p.subviewname subviewname,p.cityid cityid,p.cityname cityname,p.viewid viewid,p.adress adress,p.level level,p.viewtype viewtype,p.suitable suitable,p.viewpic viewpic,p.vdescribe vdescribe,p.introduce introduce,p.traffic traffic,p.ticketnotice ticketnotice,p.speshop speshop,p.spefood spefood,p.state state,p.isrecommend isrecommend,p.inorout inorout,p.ishot ishot,p.istop istop,p.linkway linkway,p.ordernum ordernum,p.cdate cdate,p.userid userid,p.username username,p.videourl videourl,p.clickcount clickcount from qly.view p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="viewname">viewname like #viewname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="typename">typename like #typename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="cityname">cityname like #cityname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.view 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="viewname">viewname like #viewname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="typename">typename like #typename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="cityname">cityname like #cityname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </sql>
+</sqlMap>

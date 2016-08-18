@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyflyticket">
+  <sql id="bhc_selectByPrimaryKey">select p.id id,p.fltno fltno,p.aireline aireline,p.airtype airtype,p.startairport startairport,p.arriveairport arriveairport,p.startcity startcity,p.startcityjm startcityjm,p.arrivecity arrivecity,p.arrivecityjm arrivecityjm,p.starttime starttime,p.arrivetime arrivetime,p.offsetrate offsetrate,p.offsettime offsettime,p.ticketprice ticketprice,p.avgticketprice avgticketprice,p.agent agent,p.fetchdate fetchdate,p.opttime opttime,p.typetime typetime from qly.flyticket p where id = #id:INT#</sql>
+  <sql id="bhc_insert">insert into qly.flyticket(fltno,aireline,airtype,startairport,arriveairport,startcity,startcityjm,arrivecity,arrivecityjm,starttime,arrivetime,offsetrate,offsettime,ticketprice,avgticketprice,agent,fetchdate,opttime,typetime) values (#fltno:VARCHAR#,#aireline:VARCHAR#,#airtype:VARCHAR#,#startairport:VARCHAR#,#arriveairport:VARCHAR#,#startcity:VARCHAR#,#startcityjm:VARCHAR#,#arrivecity:VARCHAR#,#arrivecityjm:VARCHAR#,#starttime:DATETIME#,#arrivetime:DATETIME#,#offsetrate:VARCHAR#,#offsettime:VARCHAR#,#ticketprice:INT#,#avgticketprice:INT#,#agent:VARCHAR#,#fetchdate:DATETIME#,#opttime:DATETIME#,#typetime:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.flyticket 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="fltno">fltno = #fltno:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="aireline">aireline = #aireline:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="airtype">airtype = #airtype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="startairport">startairport = #startairport:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="arriveairport">arriveairport = #arriveairport:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="startcity">startcity = #startcity:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="startcityjm">startcityjm = #startcityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="arrivecity">arrivecity = #arrivecity:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="arrivecityjm">arrivecityjm = #arrivecityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="starttime">starttime = #starttime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="arrivetime">arrivetime = #arrivetime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="offsetrate">offsetrate = #offsetrate:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="offsettime">offsettime = #offsettime:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ticketprice">ticketprice = #ticketprice:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="avgticketprice">avgticketprice = #avgticketprice:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="agent">agent = #agent:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fetchdate">fetchdate = #fetchdate:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="opttime">opttime = #opttime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="typetime">typetime = #typetime:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.flyticket where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.flyticket where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.fltno fltno,p.aireline aireline,p.airtype airtype,p.startairport startairport,p.arriveairport arriveairport,p.startcity startcity,p.startcityjm startcityjm,p.arrivecity arrivecity,p.arrivecityjm arrivecityjm,p.starttime starttime,p.arrivetime arrivetime,p.offsetrate offsetrate,p.offsettime offsettime,p.ticketprice ticketprice,p.avgticketprice avgticketprice,p.agent agent,p.fetchdate fetchdate,p.opttime opttime,p.typetime typetime from qly.flyticket p</sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.flyticket p</sql>
+  <sql id="bhc_getAllListSelect">select p.id id,p.fltno fltno,p.aireline aireline,p.airtype airtype,p.startairport startairport,p.arriveairport arriveairport,p.startcity startcity,p.startcityjm startcityjm,p.arrivecity arrivecity,p.arrivecityjm arrivecityjm,p.starttime starttime,p.arrivetime arrivetime,p.offsetrate offsetrate,p.offsettime offsettime,p.ticketprice ticketprice,p.avgticketprice avgticketprice,p.agent agent,p.fetchdate fetchdate,p.opttime opttime,p.typetime typetime from qly.flyticket p</sql>
+  <sql id="bhc_getAllCountSelect">select count(*) from qly.flyticket p</sql>
+</sqlMap>

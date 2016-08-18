@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlycitytocitypricecustom">
+  <sql id="bhc_selectByPrimaryKey">select p.id id,p.linename linename,p.lineid lineid,p.fromcityname fromcityname,p.traficaltype traficaltype,p.vehiclecomeseattype,p.vehiclecometime,p.price price,p.childrenprice,p.vehiclebacktype,p.vehiclebackseattype,p.vehiclebacktime,p.entime entime,p.enman enman,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy from qly.citytocitypricecustom p where id = #id:INT#</sql>
+  <sql id="bhc_insert">insert into qly.citytocitypricecustom(linename,lineid,fromcityname,traficaltype,vehiclecomeseattype,vehiclecometime,price,childrenprice,vehiclebacktype,vehiclebackseattype,vehiclebacktime,entime,enman,fromcityjm,fromcitypy) values (#linename:VARCHAR#,#lineid:INT#,#fromcityname:VARCHAR#,#traficaltype:VARCHAR#,#vehiclecomeseattype:VARCHAR#,#vehiclecometime:VARCHAR#,#price:DOUBLE#,#childrenprice:INTEGER#,#vehiclebacktype:VARCHAR#,#vehiclebackseattype:VARCHAR#,#vehiclebacktime:VARCHAR#,#entime:DATETIME#,#enman:VARCHAR#,#fromcityjm:VARCHAR#,#fromcitypy:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.citytocitypricecustom 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="linename">linename = #linename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="lineid">lineid = #lineid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityname">fromcityname = #fromcityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="traficaltype">traficaltype = #traficaltype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehiclecomeseattype">vehiclecomeseattype = #vehiclecomeseattype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehiclecometime">vehiclecometime = #vehiclecometime:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="price">price = #price:DOUBLE#</isNotEmpty>  
+      <isNotEmpty prepend="," property="childrenprice">childrenprice = #childrenprice:INTEGER#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehiclebacktype">vehiclebacktype = #vehiclebacktype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehiclebackseattype">vehiclebackseattype = #vehiclebackseattype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vehiclebacktime">vehiclebacktime = #vehiclebacktime:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="entime">entime = #entime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="enman">enman = #enman:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityjm">fromcityjm = #fromcityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcitypy">fromcitypy = #fromcitypy:VARCHAR#</isNotEmpty>  
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.citytocitypricecustom where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.citytocitypricecustom where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.linename linename,p.lineid lineid,p.fromcityname fromcityname,p.traficaltype traficaltype,p.price price,p.childrenprice,p.entime entime,p.enman enman,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy from qly.citytocitypricecustom p </sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.citytocitypricecustom</sql>
+  <sql id="bhc_getAllListSelect">select p.id id,p.linename linename,p.lineid lineid,p.fromcityname fromcityname,p.traficaltype traficaltype,p.price price,p.childrenprice,p.entime entime,p.enman enman,p.fromcityjm fromcityjm,p.fromcitypy fromcitypy from qly.citytocitypricecustom p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid">
+        <isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual>
+      </isNotEmpty>
+      <isNotEmpty prepend=" and " property="fromcityname">fromcityname like #fromcityname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCountSelect">select count(*) from qly.citytocitypricecustom 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid">
+        <isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual>
+      </isNotEmpty>
+      <isNotEmpty prepend=" and " property="fromcityname">fromcityname like #fromcityname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </sql>
+</sqlMap>

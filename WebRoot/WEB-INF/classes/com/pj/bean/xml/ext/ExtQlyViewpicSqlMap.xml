@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlyviewpic">
+  <typeAlias alias="QlyViewpic" type="com.pj.bean.QlyViewpic"/>
+  <typeAlias alias="ExtQlyViewpic" type="com.pj.bean.extend.ExtQlyViewpic"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyViewpic" parameterClass="QlyViewpic"> 
+    <include refid="qlyviewpic.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyViewpic">
+    <include refid="qlyviewpic.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="vpid">SELECT LAST_INSERT_ID() as vpid</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyViewpic">
+    <include refid="qlyviewpic.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyViewpic">
+    <include refid="qlyviewpic.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlyviewpic">
+    <include refid="qlyviewpic.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyViewpic" parameterClass="ExtQlyViewpic"> 
+    <include refid="qlyviewpic.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyViewpic"> 
+    <include refid="qlyviewpic.bhc_getAllCount"/>
+  </select>
+  <select id="bhc_getListByViewid" resultClass="QlyViewpic" parameterClass="ExtQlyViewpic">
+  	select p.vpid vpid,p.viewid viewid,p.userid userid,p.ordernum ordernum,p.picurl picurl,p.title title,p.credate credate,p.mark mark from qly.viewpic p
+  	where p.viewid=#viewid:VARCHAR# 
+  </select>
+  <delete id="bhc_delete_picall" parameterClass="QlyViewpic">
+    delete from qly.viewpic where viewid = #viewid:INT#
+  </delete>
+</sqlMap>

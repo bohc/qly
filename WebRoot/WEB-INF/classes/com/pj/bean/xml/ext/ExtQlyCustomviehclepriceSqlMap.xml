@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlycustomviehcleprice">
+  <typeAlias alias="QlyCustomviehcleprice" type="com.pj.bean.QlyCustomviehcleprice"/>
+  <typeAlias alias="ExtQlyCustomviehcleprice" type="com.pj.bean.extend.ExtQlyCustomviehcleprice"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyCustomviehcleprice" parameterClass="QlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_select"/>  <![CDATA[  where id = #id:INT# ]]> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyCustomviehcleprice">
+    <include refid="qlycustomviehcleprice.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" type="post" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyCustomviehcleprice">
+    <include refid="qlycustomviehcleprice.bhc_update"/>  <![CDATA[  where id = #id:INT# ]]> 
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyCustomviehcleprice">
+    <include refid="qlycustomviehcleprice.bhc_delete"/>  <![CDATA[  where id = #id:INT# ]]> 
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlycustomviehcleprice">
+    <include refid="qlycustomviehcleprice.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyCustomviehcleprice" parameterClass="ExtQlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_getAllList"/>  
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityjm">(fromcityjm like #fromcityjm:VARCHAR# or fromcityname like #fromcityjm:VARCHAR#)</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityjm">(tocityjm like #tocityjm:VARCHAR# or tocityname like #tocityjm:VARCHAR#)</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_getAllCount"/>  
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityjm">(fromcityjm like #fromcityjm:VARCHAR# or fromcityname like #fromcityjm:VARCHAR#)</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityjm">(tocityjm like #tocityjm:VARCHAR# or tocityname like #tocityjm:VARCHAR#)</isNotEmpty> 
+    </dynamic> 
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyCustomviehcleprice" parameterClass="ExtQlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_getAllListSelect"/>  
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityjm">(fromcityjm like #fromcityjm:VARCHAR# or fromcitypy like #fromcityjm:VARCHAR# or fromcityname like #fromcityjm:VARCHAR#)</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityjm">(tocityjm like #tocityjm:VARCHAR# or tocitypy like #tocityjm:VARCHAR# or tocityname like #tocityjm:VARCHAR#)</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_getAllCountSelect"/>  
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityjm">(fromcityjm like #fromcityjm:VARCHAR# or fromcitypy like #fromcityjm:VARCHAR# or fromcityname like #fromcityjm:VARCHAR#)</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityjm">(tocityjm like #tocityjm:VARCHAR# or tocitypy like #tocityjm:VARCHAR# or tocityname like #tocityjm:VARCHAR#)</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_exist" resultClass="java.lang.String" parameterClass="QlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_getAllCountSelect"/>  
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityjm">fromcityjm = #fromcityjm:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityjm">tocityjm = #tocityjm:VARCHAR#</isNotEmpty> 
+      <isNotEmpty prepend=" and " property="traficaltype">traficaltype = #traficaltype:VARCHAR#</isNotEmpty> 
+      <isNotEmpty prepend=" and " property="seattype">seattype = #seattype:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_selectInId" resultClass="ExtQlyCustomviehcleprice" parameterClass="java.lang.String"> 
+    <include refid="qlycustomviehcleprice.bhc_select"/> where id in($value$)
+  </select>
+  
+  <select id="bhc_selectInFromcityjm" resultClass="ExtQlyCustomviehcleprice" parameterClass="QlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_select"/> where fromcityjm in($fromcityjm$) and tocityjm =#tocityjm# and traficaltype=#traficaltype#
+  </select>
+  
+  <select id="bhc_selectIntocityjm" resultClass="ExtQlyCustomviehcleprice" parameterClass="QlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_select"/> where fromcityjm =#fromcityjm# and tocityjm in ($tocityjm$) and traficaltype=#traficaltype#
+  </select>
+  
+  <select id="bhc_forinterface" resultClass="ExtQlyCustomviehcleprice" parameterClass="QlyCustomviehcleprice"> 
+    <include refid="qlycustomviehcleprice.bhc_select"/> where fromcityjm =#fromcityjm# and tocityjm = #tocityjm# and traficaltype=#traficaltype# limit 1
+  </select>
+  
+</sqlMap>

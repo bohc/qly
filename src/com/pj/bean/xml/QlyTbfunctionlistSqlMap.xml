@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlytbfunctionlist">
+  <typeAlias alias="QlyTbfunctionlist" type="com.pj.bean.QlyTbfunctionlist"/>
+  <typeAlias alias="ExtQlyTbfunctionlist" type="com.pj.bean.extend.ExtQlyTbfunctionlist"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyTbfunctionlist" parameterClass="QlyTbfunctionlist">select p.nID nid,p.iCode icode,p.iSCode iscode,p.vSname vsname,p.iLevel ilevel,p.iSubNum isubnum,p.vName vname,p.iFuncType ifunctype,p.vUrl vurl from qly.tbfunctionlist p where nid = #nid:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyTbfunctionlist">insert into qly.tbfunctionlist(nID,iCode,iSCode,vSname,iLevel,iSubNum,vName,iFuncType,vUrl) values (#nid:INT#,#icode:INT#,#iscode:INT#,#vsname:VARCHAR#,#ilevel:SMALLINT#,#isubnum:SMALLINT#,#vname:VARCHAR#,#ifunctype:BIGINT#,#vurl:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="nid">SELECT LAST_INSERT_ID() as nid</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyTbfunctionlist">update qly.tbfunctionlist 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="nid">nID = #nid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="icode">iCode = #icode:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="iscode">iSCode = #iscode:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vsname">vSname = #vsname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ilevel">iLevel = #ilevel:SMALLINT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="isubnum">iSubNum = #isubnum:SMALLINT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vname">vName = #vname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ifunctype">iFuncType = #ifunctype:BIGINT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vurl">vUrl = #vurl:VARCHAR#</isNotEmpty> 
+    </dynamic> where nid = #nid:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyTbfunctionlist">delete from qly.tbfunctionlist where nid = #nid:INT#</delete>
+  <select id="bhc_getAllList" resultClass="QlyTbfunctionlist" parameterClass="ExtQlyTbfunctionlist">select p.nID nid,p.iCode icode,p.iSCode iscode,p.vSname vsname,p.iLevel ilevel,p.iSubNum isubnum,p.vName vname,p.iFuncType ifunctype,p.vUrl vurl from qly.tbfunctionlist p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vsname">vSname like #vsname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vname">vName like #vname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyTbfunctionlist">select count(*) from qly.tbfunctionlist 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vsname">vSname like #vsname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vname">vName like #vname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_getAllListByEmp" resultClass="QlyTbfunctionlist" parameterClass="java.util.HashMap">
+  		select p.nID nid,p.iCode icode,p.iSCode iscode,p.vSname vsname,p.iLevel ilevel,p.iSubNum isubnum,p.vName vname,p.iFuncType ifunctype,p.vUrl vurl from qly.TBFunctionList p where p.ifunctype=#ifunctype#
+  </select>
+  <select id="bhc_getAllListBySelect" resultClass="QlyTbfunctionlist" parameterClass="java.util.HashMap">
+  		select p.nID nid,p.iCode icode,p.iSCode iscode,p.vSname vsname,p.iLevel ilevel,p.iSubNum isubnum,p.vName vname,p.iFuncType ifunctype,p.vUrl vurl from qly.TBFunctionList p where p.ifunctype=100
+  </select>
+</sqlMap>

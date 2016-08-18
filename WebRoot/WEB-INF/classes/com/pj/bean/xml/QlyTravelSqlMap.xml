@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlytravel">
+  <typeAlias alias="QlyTravel" type="com.pj.bean.QlyTravel"/>
+  <typeAlias alias="ExtQlyTravel" type="com.pj.bean.extend.ExtQlyTravel"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyTravel" parameterClass="QlyTravel">select p.ltid ltid,p.vtypecode vtypecode,p.vtypename vtypename,p.travelcode travelcode,p.traveltitle traveltitle,p.breakfast breakfast,p.lunch lunch,p.supper supper,p.activity activity,p.selfexpense selfexpense,p.shop shop,p.mark mark,p.isuse isuse,p.enman enman,p.entime entime from qly.travel p where ltid = #ltid:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyTravel">insert into qly.travel(ltid,vtypecode,vtypename,travelcode,traveltitle,breakfast,lunch,supper,activity,selfexpense,shop,mark,isuse,enman,entime) values (#ltid:INT#,#vtypecode:VARCHAR#,#vtypename:VARCHAR#,#travelcode:VARCHAR#,#traveltitle:VARCHAR#,#breakfast:VARCHAR#,#lunch:VARCHAR#,#supper:VARCHAR#,#activity:TEXT#,#selfexpense:VARCHAR#,#shop:VARCHAR#,#mark:VARCHAR#,#isuse:INT#,#enman:VARCHAR#,#entime:DATETIME#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="ltid">SELECT LAST_INSERT_ID() as ltid</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyTravel">update qly.travel 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="vtypecode">vtypecode = #vtypecode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vtypename">vtypename = #vtypename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="travelcode">travelcode = #travelcode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="traveltitle">traveltitle = #traveltitle:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="breakfast">breakfast = #breakfast:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="lunch">lunch = #lunch:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="supper">supper = #supper:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="activity">activity = #activity:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="selfexpense">selfexpense = #selfexpense:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="shop">shop = #shop:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="mark">mark = #mark:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="isuse">isuse = #isuse:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="enman">enman = #enman:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="entime">entime = #entime:DATETIME#</isNotEmpty> 
+    </dynamic> where ltid = #ltid:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyTravel">delete from qly.travel where ltid = #ltid:INT#</delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlytravel">delete from qly.travel where ltid in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyTravel" parameterClass="ExtQlyTravel">select p.ltid ltid,p.vtypecode vtypecode,p.vtypename vtypename,p.travelcode travelcode,p.traveltitle traveltitle,p.breakfast breakfast,p.lunch lunch,p.supper supper,p.activity activity,p.selfexpense selfexpense,p.shop shop,p.mark mark,p.isuse isuse,p.enman enman,p.entime entime from qly.travel p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="traveltitle">traveltitle like #traveltitle:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyTravel">select count(*) from qly.travel 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="traveltitle">traveltitle like #traveltitle:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_getAllListSelect" resultClass="QlyTravel" parameterClass="ExtQlyTravel">select p.ltid ltid,p.vtypecode vtypecode,p.vtypename vtypename,p.travelcode travelcode,p.traveltitle traveltitle,p.breakfast breakfast,p.lunch lunch,p.supper supper,p.activity activity,p.selfexpense selfexpense,p.shop shop,p.mark mark,p.isuse isuse,p.enman enman,p.entime entime from qly.travel p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="traveltitle">traveltitle like #traveltitle:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyTravel">select count(*) from qly.travel 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="traveltitle">traveltitle like #traveltitle:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  <select id="bhc_getTravelByLtid" resultClass="QlyTravel" parameterClass="ExtQlyTravel">
+  	select p.ltid ltid,p.vtypecode vtypecode,p.vtypename vtypename,p.travelcode travelcode,p.traveltitle traveltitle,p.breakfast breakfast,p.lunch lunch,p.supper supper,p.activity activity,p.selfexpense selfexpense,p.shop shop,p.mark mark,p.isuse isuse,p.enman enman,p.entime entime from qly.travel p 
+    where p.ltid in
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </select>
+  
+</sqlMap>

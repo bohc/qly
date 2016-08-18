@@ -1,0 +1,116 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+  <head>
+    <title>index.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="source/css/frame.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="source/js/jquery1.8.2/core/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+	    $("#navtop li").hover(
+		    function(){ $("ul", this).fadeIn("fast"); }, 
+		    function(){ $("ul", this).fadeOut("fast"); }, 
+		    function() { } 
+	    );
+    });
+    var flag = true;
+    var openWin=null;
+
+    function toggle() {
+        if (flag) {
+            $("#tdmenu").hide();
+            $("#spliter").attr("src","source/img/frame/split_r.gif");
+            flag = false;
+        }else {
+    		$("#tdmenu").show();
+            $("#spliter").attr("src","source/img/frame/split_l.gif");
+            flag = true;
+        }
+    }
+    
+    function GetVer() {
+  	    //var con="<div class='header'>关于本系统</div>";
+    }
+    
+    function OpenEditWin(eUrl,eWidth,eHeight,eTitle){
+        openWin=new Dialog({width:eWidth,height:eHeight,afterClose:CloseWin,resizable:true,maximizable:true,lightbox:true}).href(eUrl);
+        openWin.title(eTitle);
+        openWin.status("cn");
+        openWin.show();
+        return false;
+    }
+    function CloseAllWin(){
+	    if(openWin instanceof Dialog){
+	        openWin.close();
+	        openWin=null;
+	    }else{
+	       alert('no');
+	    }
+	}
+    function CloseWin(){
+        Main.CloseWin();
+    }
+    
+    function opwin(url1,url2){
+     	$("#LeftMenu").attr("src",url1);
+     	$("#MainTT").attr("src",url2);
+     	return false;
+    }
+    </script>
+  </head>
+  
+  <body>
+    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+        <thead id="menuarea">
+            <tr>
+                <td id="header" colspan="2" style="height: 55px" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+                        <tr>
+                            <td rowspan="2" valign="top" style="width: 260px;">
+                                <img src="source/img/frame/admin-bar-cn.png" border="0">
+                            </td>
+                            <td align="right" valign="bottom">
+                                <ul id="navtop">
+                                    <li><a href="#" onclick="opwin('leftTree.do?remark=4','index!rightFile.do');return false;" class="button" target="Main">首页</a> </li>
+                                   	<li><a href="#" class="button" >系统管理</a>
+                                        <ul>
+                                            <li><a href="index!leftFile.do?ftype=100" target="LeftMenu">系统设置</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="logout.do" class="button" onclick="return confirm('确定要退出系统吗？')">退出系统</a>
+                                        <ul>
+                                            <li><a href="javascript:GetVer();">关于本系统</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="hspliter"></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%;">
+                        <tr>
+                            <td id="tdmenu" style="width: 240px;" valign="top" align="center" bgcolor="#eeeeee">
+                                <iframe frameborder="0" height="99.5%" name="LeftMenu" id="LeftMenu" scrolling="auto" width="100%" src="index!leftFile.do"></iframe>
+                            </td>
+                            <td class="vspliter">
+                                <img id="spliter" name="spliter" src="source/img/frame/split_l.gif" onclick="toggle();" alt="" style="cursor: pointer;" />
+                            </td>
+                            <td valign="top">
+                                <iframe frameborder="0" height="99.5%" name="MainIframe" id="MainIframe" scrolling="auto" width="100%" src="index!rightFile.do"></iframe>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
+</html>

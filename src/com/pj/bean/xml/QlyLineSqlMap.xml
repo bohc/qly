@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyline">
+  
+  <sql id="bhc_selectByPrimaryKey" >select p.id id,p.lineid lineid,p.lineprice lineprice,p.childprice childprice,p.roompricediff roompricediff,p.linename linename,p.titletuniu,p.platformtype,p.joinattribute joinattribute,p.destinationtype destinationtype,p.placename placename,p.placeid placeid,backplacename,backplaceid,p.passcity passcity,p.linesubject linesubject,p.attribute attribute,p.commreason commreason,p.festivalact festivalact,p.linelevel linelevel,p.comeviehcle,p.viehcletime,p.backviehcle,p.backviehcletime,p.daynum daynum,p.nightnum nightnum,p.journeypic journeypic,p.introduce introduce,p.costinfo costinfo,p.costnothave costnothave,p.attention attention,p.prebook prebook,p.calbook calbook,p.state state,p.credate credate,p.sign sign,p.isown isown,p.customcount,p.enman enman from qly.line p </sql>
+  <sql id="bhc_insert">insert into qly.line(id,lineid,lineprice,childprice,roompricediff,linename,titletuniu,platformtype,joinattribute,destinationtype,placename,placeid,backplacename,backplaceid,passcity,linesubject,attribute,commreason,festivalact,linelevel,comeviehcle,viehcletime,backviehcle,backviehcletime,daynum,nightnum,journeypic,introduce,costinfo,costnothave,attention,prebook,calbook,state,credate,sign,isown,enman) values (#id:INT#,#lineid:VARCHAR#,#lineprice:INT#,#childprice:INT#,#roompricediff:INT#,#linename:VARCHAR#,#titletuniu:VARCHAR#,#platformtype:VARCHAR#,#joinattribute:VARCHAR#,#destinationtype:VARCHAR#,#placename:VARCHAR#,#placeid:VARCHAR#,#backplacename:VARCHAR#,#backplaceid:VARCHAR#,#passcity:VARCHAR#,#linesubject:VARCHAR#,#attribute:VARCHAR#,#commreason:VARCHAR#,#festivalact:VARCHAR#,#linelevel:VARCHAR#,#comeviehcle:VARCHAR#,#viehcletime:VARCHAR#,#backviehcle:VARCHAR#,#backviehcletime:VARCHAR#,#daynum:VARCHAR#,#nightnum:VARCHAR#,#journeypic:VARCHAR#,#introduce:TEXT#,#costinfo:TEXT#,#costnothave:TEXT#,#attention:TEXT#,#prebook:TEXT#,#calbook:TEXT#,#state:INT#,#credate:DATETIME#,#sign:VARCHAR#,#isown:INT#,#enman:VARCHAR#)
+  </sql>
+  <sql id="bhc_update">update qly.line 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="lineid">lineid = #lineid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="lineprice">lineprice = #lineprice:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="childprice">childprice = #childprice:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="roompricediff">roompricediff = #roompricediff:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linename">linename = #linename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="titletuniu">titletuniu = #titletuniu:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="platformtype">platformtype = #platformtype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="joinattribute">joinattribute = #joinattribute:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="destinationtype">destinationtype = #destinationtype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="placename">placename = #placename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="placeid">placeid = #placeid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="backplacename">backplacename = #backplacename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="backplaceid">backplaceid = #backplaceid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="passcity">passcity = #passcity:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linesubject">linesubject = #linesubject:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="attribute">attribute = #attribute:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="commreason">commreason = #commreason:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="festivalact">festivalact = #festivalact:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="linelevel">linelevel = #linelevel:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="comeviehcle">comeviehcle = #comeviehcle:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="viehcletime">viehcletime = #viehcletime:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="backviehcle">backviehcle = #backviehcle:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="backviehcletime">backviehcletime = #backviehcletime:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="daynum">daynum = #daynum:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="nightnum">nightnum = #nightnum:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="journeypic">journeypic = #journeypic:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="introduce">introduce = #introduce:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="costinfo">costinfo = #costinfo:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="costnothave">costnothave = #costnothave:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="attention">attention = #attention:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="prebook">prebook = #prebook:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="calbook">calbook = #calbook:TEXT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="state">state = #state:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="credate">credate = #credate:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="sign">sign = #sign:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="isown">isown = #isown:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="enman">enman = #enman:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.line where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.line where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">
+  	select p.id id,p.lineid lineid,p.lineprice lineprice,p.childprice childprice,p.roompricediff roompricediff,p.linename linename,p.platformtype,p.titletuniu,p.joinattribute joinattribute,p.destinationtype destinationtype,p.placename placename,p.placeid placeid,p.backplaceid,p.backplacename,p.passcity passcity,p.linesubject linesubject,p.attribute attribute,p.commreason commreason,p.festivalact festivalact,p.linelevel linelevel,p.comeviehcle,p.backviehcle,p.daynum daynum,p.nightnum nightnum,p.state state,p.credate credate,p.sign sign,p.isown isown,p.customcount,
+  	p.enman enman from qly.line p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">p.linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="platformtype">p.platformtype like #platformtype:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid">p.lineid like #lineid:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="destinationtype">p.destinationtype like #destinationtype:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="placename">p.placename like #placename:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCount">
+  select count(1) from qly.line p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="linename">p.linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="platformtype">p.platformtype like #platformtype:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="lineid">p.lineid like #lineid:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="destinationtype">p.destinationtype like #destinationtype:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="placename">p.placename like #placename:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+  </sql>
+</sqlMap>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+  <!--这个一个注释 -->
+  <properties resource="jdbc.properties"/>
+  <settings cacheModelsEnabled="true" enhancementEnabled="true" lazyLoadingEnabled="true" maxRequests="64" maxSessions="20" maxTransactions="20" useStatementNamespaces="true"/>
+  <transactionManager type="JDBC">
+    <dataSource type="SIMPLE">
+      <property name="JDBC.Driver" value="${jdbc.mysql.pjbaseinfodb.driver}"/>
+      <property name="JDBC.ConnectionURL" value="${jdbc.mysql.pjbaseinfodb.url}"/>
+      <property name="JDBC.Username" value="${jdbc.mysql.pjbaseinfodb.user}"/>
+      <property name="JDBC.Password" value="${jdbc.mysql.pjbaseinfodb.password}"/>
+      <property name="Pool.PingQuery" value="select 1"/>
+      <property name="Pool.PingEnabled" value="true"/>
+      <property name="Pool.PingConnectionsOlderThan" value="0"/>
+      <property name="Pool.PingConnectionsNotUsedFor" value="3600000"/>
+    </dataSource>
+  </transactionManager>
+  <sqlMap resource="com/pj/bean/xml/ModelBase_SqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyLineSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyLineSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyUserinfoSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyLinetravelSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyViewSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyTareaSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyViewtypeSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyTravelSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyTraveltypeSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyCitytocitypriceSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyTbfunctionlistSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyViewpicSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyViewpicSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyViewSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyCitytocitypriceSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyLinepicSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyLinepicSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyCitytocitypricecustomSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyCitytocitypricecustomSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyRegulatepriceconditionSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyRegulatepriceconditionSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyFlyticketSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyFlyticketSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/QlyCustomviehclepriceSqlMap.xml"/>
+  <sqlMap resource="com/pj/bean/xml/ext/ExtQlyCustomviehclepriceSqlMap.xml"/>
+</sqlMapConfig>

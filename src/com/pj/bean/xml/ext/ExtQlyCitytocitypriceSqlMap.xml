@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlycitytocityprice">
+  <typeAlias alias="QlyCitytocityprice" type="com.pj.bean.QlyCitytocityprice"/>
+  <typeAlias alias="ExtQlyCitytocityprice" type="com.pj.bean.extend.ExtQlyCitytocityprice"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyCitytocityprice" parameterClass="QlyCitytocityprice"> 
+    <include refid="qlycitytocityprice.bhc_select"/>  where id = #id:INT#
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyCitytocityprice">
+    <include refid="qlycitytocityprice.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyCitytocityprice">
+    <include refid="qlycitytocityprice.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyCitytocityprice">
+    <include refid="qlycitytocityprice.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlycitytocityprice">
+    <include refid="qlycitytocityprice.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyCitytocityprice" parameterClass="ExtQlyCitytocityprice"> 
+    <include refid="qlycitytocityprice.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyCitytocityprice"> 
+    <include refid="qlycitytocityprice.bhc_getAllCount"/>
+  </select>
+  <parameterMap id="swapParameters"  class="java.util.HashMap">  
+  	<parameter property="cnt" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN"/>  
+  	<parameter property="fc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>  
+  	<parameter property="tc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>  
+  	<parameter property="price" jdbcType="DOUBLE" javaType="java.lang.Double" mode="IN"/>  
+  	<parameter property="tra" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+  	<parameter property="enman" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+  	<parameter property="result" jdbcType="INTEGER" javaType="java.lang.Integer" mode="OUT"/>
+  	</parameterMap>
+  	<procedure id="addCityToCityPrice" parameterMap="swapParameters" >
+  		{call addCityToCityPrice (?, ?, ?, ?, ?, ?, ?)}
+  	</procedure>
+  	
+  	<select id="bhc_selectByPlacename" resultClass="QlyCitytocityprice" parameterClass="ExtQlyCitytocityprice"> 
+		select p.fromcityjm fromcityjm,p.fromcityname from qly.citytocityprice p
+		where tocityname = #tocityname# and fromcityjm in (select fromcityjm from qly.citytocitypricecustom where lineid=$lineid$)
+	</select>
+	
+  	<select id="bhc_selectByFromAndToCity" resultClass="QlyCitytocityprice" parameterClass="QlyCitytocityprice"> 
+		<include refid="qlycitytocityprice.bhc_select"/>  
+		where tocityname = #tocityname# and fromcityjm = #fromcityjm# 
+		limit 1
+	</select>
+</sqlMap>

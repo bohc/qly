@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlyregulatepricecondition">
+  <typeAlias alias="QlyRegulatepricecondition" type="com.pj.bean.QlyRegulatepricecondition"/>
+  <typeAlias alias="ExtQlyRegulatepricecondition" type="com.pj.bean.extend.ExtQlyRegulatepricecondition"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyRegulatepricecondition" parameterClass="QlyRegulatepricecondition"> 
+    <include refid="qlyregulatepricecondition.bhc_selectByPrimaryKey"/> 
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyRegulatepricecondition">
+    <include refid="qlyregulatepricecondition.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyRegulatepricecondition">
+    <include refid="qlyregulatepricecondition.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyRegulatepricecondition">
+    <include refid="qlyregulatepricecondition.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlyregulatepricecondition">
+    <include refid="qlyregulatepricecondition.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyRegulatepricecondition" parameterClass="ExtQlyRegulatepricecondition"> 
+    <include refid="qlyregulatepricecondition.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyRegulatepricecondition"> 
+    <include refid="qlyregulatepricecondition.bhc_getAllCount"/>
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyRegulatepricecondition" parameterClass="ExtQlyRegulatepricecondition"> 
+    <include refid="qlyregulatepricecondition.bhc_getAllListSelect"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyRegulatepricecondition"> 
+    <include refid="qlyregulatepricecondition.bhc_getAllCountSelect"/>
+  </select>
+  
+  <select id="bhc_getAllByLineid" resultClass="QlyRegulatepricecondition" parameterClass="QlyRegulatepricecondition"> 
+    select lineid,difftype,price,startdate,enddate from qly.regulatepricecondition where lineid=$lineid$
+  </select>
+</sqlMap>

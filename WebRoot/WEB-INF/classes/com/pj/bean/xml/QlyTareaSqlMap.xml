@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlytarea">
+  <typeAlias alias="QlyTarea" type="com.pj.bean.QlyTarea"/>
+  <typeAlias alias="ExtQlyTarea" type="com.pj.bean.extend.ExtQlyTarea"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyTarea" parameterClass="QlyTarea">select p.aid aid,p.acode acode,p.ircode ircode,p.area area,p.areapy areapy,p.pid pid,p.pname pname,p.remark remark,p.airportcode,p.airportname from qly.tarea p where aid = #aid:INT#</select>
+  <select id="bhc_selectByAcode" resultClass="QlyTarea" parameterClass="QlyTarea">select p.aid aid,p.acode acode,p.ircode ircode,p.area area,p.areapy areapy,p.pid pid,p.pname pname,p.remark remark,p.airportcode,p.airportname from qly.tarea p where acode = #acode:VARCHAR# limit 1</select>
+  <insert id="bhc_insert" parameterClass="QlyTarea">insert into qly.tarea(aid,acode,ircode,area,areapy,pid,pname,remark,airportcode,airportname) values (#aid:INT#,#acode:VARCHAR#,#ircode:VARCHAR#,#area:VARCHAR#,#areapy:VARCHAR#,#pid:VARCHAR#,#pname:VARCHAR#,#remark:VARCHAR#,#airportcode:VARCHAR#,#airportname:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="aid">SELECT LAST_INSERT_ID() as aid</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyTarea">update qly.tarea 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="acode">acode = #acode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ircode">ircode = #ircode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="area">area = #area:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="areapy">areapy = #areapy:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="pid">pid = #pid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="pname">pname = #pname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="remark">remark = #remark:VARCHAR#</isNotEmpty> 
+      <isNotEmpty prepend="," property="airportcode">airportcode = #airportcode:VARCHAR#</isNotEmpty> 
+      <isNotEmpty prepend="," property="airportname">airportname = #airportname:VARCHAR#</isNotEmpty> 
+    </dynamic> where aid = #aid:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyTarea">delete from qly.tarea where aid = #aid:INT#</delete>
+  <delete id="bhc_delete_batch" parameterClass="ExtQlyTarea">delete from qly.tarea where aid in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyTarea" parameterClass="ExtQlyTarea">select p.aid aid,p.acode acode,p.ircode ircode,p.area area,p.areapy areapy,p.pid pid,p.pname pname,p.remark remark,p.airportcode,p.airportname from qly.tarea p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="areapy">areapy like #areapy:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="pid">pid like #pid:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyTarea">select count(*) from qly.tarea 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="areapy">areapy like #areapy:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="pid">pid like #pid:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+  <select id="bhc_getAllListSelect" resultClass="QlyTarea" parameterClass="ExtQlyTarea">
+  	select p.aid aid,p.acode acode,p.ircode ircode,p.area area,p.areapy areapy,p.pid pid,p.pname pname,p.remark remark,p.airportcode,p.airportname from qly.tarea p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="areapy">areapy like #areapy:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="pid">left(pid,length(#pid#)) = #pid:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyTarea">select count(*) from qly.tarea 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="areapy">areapy like #areapy:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="pid">left(pid,length(#pid#)) = #pid:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+  
+</sqlMap>

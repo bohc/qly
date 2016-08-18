@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyviewpic">
+  <sql id="bhc_selectByPrimaryKey">select p.vpid vpid,p.viewid viewid,p.userid userid,p.ordernum ordernum,p.picurl picurl,p.title title,p.credate credate,p.mark mark from qly.viewpic p where vpid = #vpid:INT#</sql>
+  <sql id="bhc_insert">insert into qly.viewpic(viewid,userid,ordernum,picurl,title,credate,mark) values (#viewid:INT#,#userid:VARCHAR#,#ordernum:INT#,#picurl:VARCHAR#,#title:VARCHAR#,#credate:DATETIME#,#mark:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.viewpic 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="viewid">viewid = #viewid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="userid">userid = #userid:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="ordernum">ordernum = #ordernum:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="picurl">picurl = #picurl:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="title">title = #title:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="credate">credate = #credate:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="mark">mark = #mark:VARCHAR#</isNotEmpty> 
+    </dynamic> where vpid = #vpid:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.viewpic where vpid = #vpid:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.viewpic where vpid in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.vpid vpid,p.viewid viewid,p.userid userid,p.ordernum ordernum,p.picurl picurl,p.title title,p.credate credate,p.mark mark from qly.viewpic p 
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.viewpic</sql>
+</sqlMap>

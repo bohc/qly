@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlycitytocityprice">
+  <sql id="bhc_select">select p.id id,p.traficaltype traficaltype,p.price price,p.fromcityname fromcityname,p.tocityname tocityname,p.entime entime,p.enman enman,p.fromcityjm fromcityjm,p.tocityjm tocityjm,p.fromcitypy fromcitypy,p.tocitypy tocitypy from qly.citytocityprice p</sql>
+  <sql id="bhc_insert">insert into qly.citytocityprice(id,traficaltype,price,fromcityname,tocityname,entime,enman,fromcityjm,tocityjm,fromcitypy,tocitypy) values (#id:INT#,#traficaltype:VARCHAR#,#price:DOUBLE#,#fromcityname:VARCHAR#,#tocityname:VARCHAR#,#entime:DATETIME#,#enman:VARCHAR#,#fromcityjm:VARCHAR#,#tocityjm:VARCHAR#,#fromcitypy:VARCHAR#,#tocitypy:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.citytocityprice 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="traficaltype">traficaltype = #traficaltype:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="price">price = #price:DOUBLE#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityname">fromcityname = #fromcityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocityname">tocityname = #tocityname:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="entime">entime = #entime:DATETIME#</isNotEmpty>  
+      <isNotEmpty prepend="," property="enman">enman = #enman:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcityjm">fromcityjm = #fromcityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocityjm">tocityjm = #tocityjm:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="fromcitypy">fromcitypy = #fromcitypy:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="tocitypy">tocitypy = #tocitypy:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.citytocityprice where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.citytocityprice where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.traficaltype traficaltype,p.price price,p.fromcityname fromcityname,p.tocityname tocityname,p.entime entime,p.enman enman,p.fromcityjm fromcityjm,p.tocityjm tocityjm,p.fromcitypy fromcitypy,p.tocitypy tocitypy from qly.citytocityprice p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityname">fromcityname like #fromcityname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityname">tocityname like #tocityname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.citytocityprice 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="fromcityname">fromcityname like #fromcityname:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="tocityname">tocityname like #tocityname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </sql>
+</sqlMap>

@@ -1,0 +1,2280 @@
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tbfunctionlist" class="com.pj.action.TbfunctionlistAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="userinfo" class="com.pj.action.UserinfoAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="userinfo" class="com.pj.action.UserinfoAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tarea" class="com.pj.action.TareaAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="viewtype" class="com.pj.action.ViewtypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="travel" class="com.pj.action.TravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="line" class="com.pj.action.LineAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="linetravel" class="com.pj.action.LinetravelAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="traveltype" class="com.pj.action.TraveltypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="traveltype" class="com.pj.action.TraveltypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="traveltype" class="com.pj.action.TraveltypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="citytocityprice" class="com.pj.action.CitytocitypriceAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tbfunctionlist" class="com.pj.action.TbfunctionlistAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tbfunctionlist" class="com.pj.action.TbfunctionlistAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tbfunctionlist" class="com.pj.action.TbfunctionlistAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="tbfunctionlist" class="com.pj.action.TbfunctionlistAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="view" class="com.pj.action.ViewAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="viewtype" class="com.pj.action.ViewtypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="viewtype" class="com.pj.action.ViewtypeAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="viewpic" class="com.pj.action.ViewpicAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+
+<action name="viewpic" class="com.pj.action.ViewpicAction">
+	<result>${pagename}</result>
+	<result name="rsuccess" type="redirect-action">${pagename}</result>
+	<result name="list" type="redirect-action">
+		<param name="actionName">${pagename}</param>
+	</result>
+</action>
+

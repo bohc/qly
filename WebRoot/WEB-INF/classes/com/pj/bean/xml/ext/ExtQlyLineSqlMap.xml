@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="extqlyline">
+  <typeAlias alias="QlyLine" type="com.pj.bean.QlyLine"/>
+  <typeAlias alias="ExtQlyLine" type="com.pj.bean.extend.ExtQlyLine"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyLine" parameterClass="QlyLine"> 
+    <include refid="qlyline.bhc_selectByPrimaryKey"/> <![CDATA[ where id = #id:INT#  ]]>
+  </select>
+  <select id="bhc_selectByLinecode" resultClass="QlyLine" parameterClass="java.util.HashMap"> 
+    <include refid="qlyline.bhc_selectByPrimaryKey"/> <![CDATA[ where p.lineid = #linecode#  ]]>
+  </select>
+  <insert id="bhc_insert" parameterClass="QlyLine">
+    <include refid="qlyline.bhc_insert"/>
+    <selectKey resultClass="java.lang.Integer" type="post" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyLine">
+    <include refid="qlyline.bhc_update"/>
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyLine">
+    <include refid="qlyline.bhc_delete"/>
+  </delete>
+  <delete id="bhc_delete_batch" parameterClass="ExtQlyLine">
+    <include refid="qlyline.bhc_delete_batch"/>
+  </delete>
+  <select id="bhc_getAllList" resultClass="ExtQlyLine" parameterClass="ExtQlyLine"> 
+    <include refid="qlyline.bhc_getAllList"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyLine"> 
+    <include refid="qlyline.bhc_getAllCount"/>
+  </select>
+  <select id="bhc_getAllListSelect" resultClass="QlyLine" parameterClass="ExtQlyLine"> 
+  	select p.id id,p.lineid lineid,p.lineprice lineprice,p.linename linename,p.joinattribute joinattribute,p.destinationtype destinationtype,p.placename placename,p.placeid placeid,p.passcity passcity,p.linesubject linesubject,p.attribute attribute,p.festivalact festivalact,p.linelevel linelevel,p.daynum daynum,p.nightnum nightnum,p.state state,p.credate credate,p.sign sign,p.isown isown,p.enman enman 
+  	from qly.line p where p.customcount>0
+    <dynamic>
+    	<isNotEmpty prepend=" and " property="linename">
+    		<isNotEqual property="id" compareValue="0">p.id = #id#</isNotEqual>
+    	</isNotEmpty>
+    	<isNotEmpty prepend=" and " property="eid">
+    		<isNotEqual property="eid" compareValue="0">p.id != #eid#</isNotEqual>
+    	</isNotEmpty>
+      	<isNotEmpty prepend=" and " property="linename">p.linename like #linename:VARCHAR#</isNotEmpty>
+      	<isNotEmpty prepend=" and " property="destinationtype">p.destinationtype like #destinationtype:VARCHAR#</isNotEmpty>
+      	<isNotEmpty prepend=" and " property="placename">p.placename like #placename:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCountSelect" resultClass="java.lang.String" parameterClass="ExtQlyLine"> 
+  	select count(*) from qly.line p where p.customcount>0
+    <dynamic>
+    	<isNotEmpty prepend=" and " property="linename">
+    		<isNotEqual property="id" compareValue="0"> p.id = #id# </isNotEqual>
+    	</isNotEmpty>
+    	<isNotEmpty prepend=" and " property="eid">
+    		<isNotEqual property="eid" compareValue="0"> p.id != #eid# </isNotEqual>
+    	</isNotEmpty>
+      <isNotEmpty prepend=" and " property="linename">p.linename like #linename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="destinationtype">p.destinationtype like #destinationtype:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="placename">p.placename like #placename:VARCHAR#</isNotEmpty> 
+    </dynamic>
+  </select>
+  
+  <select id="bhc_getAllListForXml" resultClass="QlyLine" parameterClass="ExtQlyLine"> 
+  	select p.id id,p.lineid lineid,p.linename linename,p.placename from qly.line p where state=1
+    <include refid="ordermodel.order"/>
+  </select>
+  
+  <parameterMap class="java.util.HashMap" id="copyLine">
+  	<parameter property="lid" javaType="INTEGER" jdbcType="int" mode="IN"/>
+  </parameterMap>
+  <procedure id="copyLineSP" parameterMap="copyLine" resultClass="QlyLine">
+  	{call qly.sp_copyline(?)}
+  </procedure>
+  
+  <parameterMap class="java.util.HashMap" id="delLine">
+  	<parameter property="lid" javaType="INTEGER" jdbcType="int" mode="IN"/>
+  	<parameter property="errcode" javaType="INTEGER" jdbcType="int" mode="OUT"/>
+  </parameterMap>
+  <procedure id="delLineSP" parameterMap="delLine">
+  	{call qly.sp_delline(?,?)}
+  </procedure>
+  
+  <procedure id="statCustomCount">
+  	{call qly.statCustomCount()}
+  </procedure>
+  
+  <select id="bhc_ListByCityForXml" resultClass="ExtQlyLine" parameterClass="java.util.Map"> 
+  	select a.id,a.lineid,a.linename,a.placename,a.placeid,b.fromcityjm fromcityjm from line a join citytocitypricecustom b on a.id=b.lineid and a.state=1 
+  	<dynamic prepend="where">
+  		<isNotEmpty prepend="and " property="tocity">a.placename in($tocity$)</isNotEmpty>
+  		<isNotEmpty prepend="and " property="fromcity">b.fromcityname in($fromcity$)</isNotEmpty>
+  		<isNotEmpty prepend="and " property="lineid">a.lineid =#lineid#</isNotEmpty>
+  	</dynamic>
+  </select>
+  
+</sqlMap>

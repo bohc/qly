@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlylinepic">
+  <sql id="bhc_selectByPrimaryKey">select p.id id,p.lineid lineid,p.vpicfix vpicfix from qly.linepic p where id = #id:INT#</sql>
+  <sql id="bhc_insert">insert into qly.linepic(lineid,vpicfix) values (#lineid:INT#,#vpicfix:VARCHAR#)</sql>
+  <sql id="bhc_update">update qly.linepic 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="lineid">lineid = #lineid:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vpicfix">vpicfix = #vpicfix:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </sql>
+  <sql id="bhc_delete">delete from qly.linepic where id = #id:INT#</sql>
+  <sql id="bhc_delete_batch">delete from qly.linepic where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </sql>
+  <sql id="bhc_getAllList">select p.id id,p.lineid lineid,p.vpicfix vpicfix from qly.linepic p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="lineid">
+        <isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual>
+      </isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </sql>
+  <sql id="bhc_getAllCount">select count(*) from qly.linepic 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="lineid">
+        <isNotEqual property="lineid" compareValue="0">lineid = #lineid:VARCHAR#</isNotEqual>
+      </isNotEmpty> 
+    </dynamic> 
+  </sql>
+</sqlMap>

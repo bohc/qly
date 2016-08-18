@@ -1,0 +1,83 @@
+* {
+	margin: 0px;
+	font-size: 13px;
+	font-family: "微软雅黑";
+	padding: 0px;
+}
+#header {
+	background-image: url('../img/frame/bg_toolbar.png');
+	background-repeat: repeat-x;
+}
+#navtop {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	float:right;
+	margin-right:16px;
+}
+#navtop li {
+	float: left;
+	text-align:center;
+	line-height:26px;
+	height:26px;
+	margin-left:2px;
+}
+#navtop li a.button {
+	background: url('../img/frame/bg_button.gif') no-repeat;
+	color: #333333;
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	text-decoration: none;
+	width: 92px;
+}
+#navtop li a:hover.button {
+	color: #333333;
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	text-decoration: none;
+	width: 92px;
+}
+#navtop ul {
+	position: absolute;
+	display: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	border:solid 1px #ADABB8;
+	border-top:solid 1px #ADABB8;
+	z-index: 10000;
+}
+#navtop ul li {
+	background:#fff;
+	text-align:left;
+	width:90px;
+	float: none;
+	margin: 0px;
+}
+#navtop ul li a {
+	padding-left:12px;
+	display:block;
+	height:26px;
+	line-height:26px;
+	cursor:pointer;
+}
+#navtop ul li a:hover {
+	color:#333;
+	background:#F1F1F1;
+}
+.hspliter {
+	height:5px;
+	background:url('../img/frame/maintopbg.gif') repeat-x;
+}
+.vspliter {
+	border-left: solid 1px #B7C2E2; 
+	border-right: solid 1px #B7C2E2; 
+	width: 5px;
+	background: url('../img/frame/bg_split.gif');
+	background-repeat: repeat-y;
+	text-align:center;
+}

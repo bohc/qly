@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="qlyviewtype">
+  <typeAlias alias="QlyViewtype" type="com.pj.bean.QlyViewtype"/>
+  <typeAlias alias="ExtQlyViewtype" type="com.pj.bean.extend.ExtQlyViewtype"/>
+  <select id="bhc_selectByPrimaryKey" resultClass="QlyViewtype" parameterClass="QlyViewtype">select p.id id,p.vtypename vtypename,p.vtypecode vtypecode,p.vparcode vparcode,p.vparname vparname from qly.viewtype p where id = #id:INT#</select>
+  <insert id="bhc_insert" parameterClass="QlyViewtype">insert into qly.viewtype(id,vtypename,vtypecode,vparcode,vparname) values (#id:INT#,#vtypename:VARCHAR#,#vtypecode:VARCHAR#,#vparcode:VARCHAR#,#vparname:VARCHAR#)
+    <selectKey resultClass="java.lang.Integer" keyProperty="id">SELECT LAST_INSERT_ID() as id</selectKey>
+  </insert>
+  <update id="bhc_update" parameterClass="QlyViewtype">update qly.viewtype 
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="vtypename">vtypename = #vtypename:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vtypecode">vtypecode = #vtypecode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vparcode">vparcode = #vparcode:VARCHAR#</isNotEmpty>  
+      <isNotEmpty prepend="," property="vparname">vparname = #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic> where id = #id:INT#
+  </update>
+  <delete id="bhc_delete" parameterClass="QlyViewtype">delete from qly.viewtype where id = #id:INT#</delete>
+  <delete id="bhc_delete_batch" parameterClass="extqlyviewtype">delete from qly.viewtype where id in 
+    <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
+  </delete>
+  <select id="bhc_getAllList" resultClass="QlyViewtype" parameterClass="ExtQlyViewtype">select p.id id,p.vtypename vtypename,p.vtypecode vtypecode,p.vparcode vparcode,p.vparname vparname from qly.viewtype p 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic>  
+    <include refid="ordermodel.order"/>
+  </select>
+  <select id="bhc_getAllCount" resultClass="java.lang.String" parameterClass="ExtQlyViewtype">select count(*) from qly.viewtype 
+    <dynamic prepend=" where ">
+      <isNotEmpty prepend=" and " property="vtypename">vtypename like #vtypename:VARCHAR#</isNotEmpty>
+      <isNotEmpty prepend=" and " property="vparname">vparname like #vparname:VARCHAR#</isNotEmpty> 
+    </dynamic> 
+  </select>
+</sqlMap>

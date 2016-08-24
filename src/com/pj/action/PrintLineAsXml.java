@@ -893,7 +893,7 @@ public class PrintLineAsXml extends ActionBase {
 			calb.setTime(cal.getTime());
 		}
 		sbs.append("</teams>");
-		return timeflag;
+		return timeflag==null?"":timeflag;
 	}
 
 	/**

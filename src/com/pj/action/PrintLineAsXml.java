@@ -297,13 +297,12 @@ public class PrintLineAsXml extends ActionBase {
 				sb.setLength(sb.length() - 1);
 			}
 			sbs.append("\r\n<image>").append(sb).append("</image>");
-			sbs.append("\r\n<feature>").append(ql.getIntroduce().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24")).append("</feature>");
-			sbs.append("\r\n<feeinclude>").append(ql.getCostinfo().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24")).append("</feeinclude>");
-			sbs.append("\r\n<feeexclude>").append(ql.getCostnothave().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24"))
-					.append("</feeexclude>");
-			sbs.append("\r\n<attention>").append(ql.getAttention().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24")).append("</attention>");
-			sbs.append("\r\n<prebook>").append(ql.getPrebook().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24")).append("</prebook>");
-			sbs.append("\r\n<calbook>").append(ql.getCalbook().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24")).append("</calbook>");
+			sbs.append("\r\n<feature>").append(replaceCharacter(ql.getIntroduce())).append("</feature>");
+			sbs.append("\r\n<feeinclude>").append(replaceCharacter(ql.getCostinfo())).append("</feeinclude>");
+			sbs.append("\r\n<feeexclude>").append(replaceCharacter(ql.getCostnothave())).append("</feeexclude>");
+			sbs.append("\r\n<attention>").append(replaceCharacter(ql.getAttention())).append("</attention>");
+			sbs.append("\r\n<prebook>").append(replaceCharacter(ql.getPrebook())).append("</prebook>");
+			sbs.append("\r\n<calbook>").append(replaceCharacter(ql.getCalbook())).append("</calbook>");
 		}
 		sbs.append("\r\n</summary>");
 
@@ -436,14 +435,12 @@ public class PrintLineAsXml extends ActionBase {
 				sb.append("\r\n<activities>");
 				if (qts != null && qts.size() > 0) {
 					for (QlyTravel qtl : qts) {
-						sb.append("\r\n<activity>")
-								.append(qtl.getActivity().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24").replace("&hellip;", "%25"))
-								.append("</activity>");
+						sb.append("\r\n<activity>").append(replaceCharacter(qtl.getActivity())).append("</activity>");
 						sbh.setLength(0);
 						sbh.append(qlt.getHotel() == null ? "二星或同等级酒店" : qlt.getHotel());
-						sbstay.append(qlt.getStay() == null ? "" : qlt.getStay().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24"));
-						inn.append(qlt.getInnfeature() == null ? "" : qlt.getInnfeature());
-						innmark.append(qtl.getMark() == null ? "" : qtl.getMark().replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24"));
+						sbstay.append(qlt.getStay() == null ? "" : replaceCharacter(qlt.getStay()));
+						inn.append(qlt.getInnfeature() == null ? "" : replaceCharacter(qlt.getInnfeature()));
+						innmark.append(qtl.getMark() == null ? "" : replaceCharacter(qtl.getMark()));
 						shopping.append(qtl.getShop() == null ? "" : qtl.getShop());
 						selfexpense.append(qtl.getSelfexpense() == null ? "" : qtl.getSelfexpense());
 						if (qtl.getBreakfast() != null && qtl.getBreakfast().trim().equals(have)) {
@@ -574,10 +571,10 @@ public class PrintLineAsXml extends ActionBase {
 						for (QlyFlyticket q : t) {
 							tp2 += q.getTicketprice();
 						}
-						tfprice += tp2 / t.size();//得到一天中的平均价
+						tfprice += tp2 / t.size();// 得到一天中的平均价
 					}
 				}
-				tfprice = tfprice / m.size();//得到整条线的平均价
+				tfprice = tfprice / m.size();// 得到整条线的平均价
 			}
 
 			// 把最大的日期记录下来
@@ -968,12 +965,12 @@ public class PrintLineAsXml extends ActionBase {
 		if (m == null)
 			return null;
 
-		Date mdate=m.get("maxdate").get(0).getStarttime();
-		if(c.getTime().getTime()>mdate.getTime()){
+		Date mdate = m.get("maxdate").get(0).getStarttime();
+		if (c.getTime().getTime() > mdate.getTime()) {
 			m.get("maxdate").get(0).setTypetime(typetime);
 			return m.get("maxdate").get(0);
 		}
-		
+
 		Calendar cal = Calendar.getInstance();
 		Calendar calsub = Calendar.getInstance();
 		cal.setTime(c.getTime());
@@ -1027,6 +1024,13 @@ public class PrintLineAsXml extends ActionBase {
 	private int approximate(int value) {
 		value = new BigDecimal(String.valueOf(value / 10)).setScale(0, BigDecimal.ROUND_HALF_UP).intValue();
 		return value * 10;
+	}
+
+	private String replaceCharacter(String str) {
+		if (str == null)
+			return null;
+		return str.replace("&nbsp;", "%20").replace("&mdash;", "%21").replace("&ldquo;", "%22").replace("&rdquo;", "%23").replace("&bull;", "%24").replace("&hellip;", "%25").replace("&rarr;", "%26")
+				.replace("&barr;", "%27").replace("&larr;", "%28").replace("&tarr;", "%29");
 	}
 
 	public String getLinecode() {

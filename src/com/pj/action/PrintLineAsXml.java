@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
@@ -587,6 +588,7 @@ public class PrintLineAsXml extends ActionBase {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private String combineTems(StringBuffer sbs, QlyLine ql, QlyCitytocitypricecustom cprice) {
 
 		String timeflag = "";
@@ -821,8 +823,7 @@ public class PrintLineAsXml extends ActionBase {
 			pm.put("JPCDprice", approximate(childrenprice + dchildreprice + cfprice + cbackprice + citychildrenprice + vcprice));
 			pm.put("JPchildprice", approximate(childrenprice + dchildreprice + cfprice + cbackprice + citychildrenprice + vcprice));
 			pm.put("childprice", approximate(childrenprice + citychildrenprice));
-			System.out.println(
-					"childrenprice:" + childrenprice + "\tdchildreprice:" + dchildreprice + "\tcfprice:" + cfprice + "\tcbackprice:" + cbackprice + "\tcitychildrenprice:" + citychildrenprice + "\tvcprice:" + vcprice);
+			System.out.println(Arrays.asList(pm));
 
 			pm.put("roomnum", 2);
 			pm.put("roomsendprice", approximate(ql.getRoompricediff() + droomdiffprice));
@@ -873,7 +874,8 @@ public class PrintLineAsXml extends ActionBase {
 			mp.put("qunarprice", pm.get("qunarprice"));
 			mp.put("JPCDprice", pm.get("JPCDprice"));
 
-			sbs.append("<team takeoffdate=\"" + sdf.format(cal.getTime()) //
+			StringBuffer sbf = new StringBuffer("");
+			sbf.append("<team takeoffdate=\"" + sdf.format(cal.getTime()) //
 					+ "\" flightprice=\"" + mp.get("flightprice") //
 					+ "\" childprice=\"" + mp.get("childprice") //
 					+ "\" adultprice=\"" + mp.get("adultprice") //
@@ -888,12 +890,20 @@ public class PrintLineAsXml extends ActionBase {
 					+ "\" flysprice=\"" + mp.get("flysprice") //
 					+ "\" flydate=\"" + mp.get("fd") //
 					+ "\" pricedesc=\"\">");
-			sbs.append("</team>");
+			sbf.append("</team>");
+			if (cal.get(Calendar.MONTH) == 8) {
+				if (cal.get(Calendar.DAY_OF_MONTH) == 15 || cal.get(Calendar.DAY_OF_MONTH) == 16) {
+					System.out.println("dddddddddddd\t" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(cal.getTime()));
+					System.out.println(sbf);
+				}
+			}
+			sbs.append(sbf);
+			sbf.setLength(0);
 			cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 			calb.setTime(cal.getTime());
 		}
 		sbs.append("</teams>");
-		return timeflag==null?"":timeflag;
+		return timeflag == null ? "" : timeflag;
 	}
 
 	/**

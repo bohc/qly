@@ -971,6 +971,7 @@ public class PrintLineAsXml extends ActionBase {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private QlyFlyticket getFT(Map<String, List<QlyFlyticket>> m, Calendar c, String typetime) {
 		if (m == null)
 			return null;
@@ -989,13 +990,15 @@ public class PrintLineAsXml extends ActionBase {
 
 		for (int i = 0; i < 60; i++) {
 			boolean b = false;
-			if (m.containsKey(sdf.format(cal.getTime()))) {
-				// 如果当天没有，那么往前面找一天
+			String cdate = sdf.format(cal.getTime());
+			// 如果当天没有，那么往前面找一天
+			// 如果前面一天没有，那么往后面找一天
+			if (m.containsKey(cdate)) {
 				b = true;
 			} else {
-				// 如果前面一天没有，那么往后面找一天
 				calsub.set(Calendar.DAY_OF_MONTH, c.get(Calendar.DAY_OF_MONTH) - (i + 1));
-				if (m.containsKey(sdf.format(calsub.getTime()))) {
+				cdate = sdf.format(calsub.getTime());
+				if (m.containsKey(cdate)) {
 					cal.setTime(calsub.getTime());
 					b = true;
 				}
@@ -1004,28 +1007,33 @@ public class PrintLineAsXml extends ActionBase {
 				cal.set(Calendar.DAY_OF_MONTH, c.get(Calendar.DAY_OF_MONTH) + (i + 1));
 				continue;
 			}
-			List<QlyFlyticket> tlist = ((List<QlyFlyticket>) m.get(sdf.format(cal.getTime())));
-			if (tlist != null && tlist.size() > 0) {
+			ArrayList<QlyFlyticket> tlist = ((ArrayList<QlyFlyticket>) m.get(cdate));
+			ArrayList<QlyFlyticket> teplist=(ArrayList<QlyFlyticket>) tlist.clone();
+			if (teplist != null && teplist.size() > 0) {
 				if (typetime != null && typetime.trim().length() > 1) {
-					for (Iterator<QlyFlyticket> it = tlist.iterator(); it.hasNext();) {
+					for (Iterator<QlyFlyticket> it = teplist.iterator(); it.hasNext();) {
 						QlyFlyticket qft = it.next();
 						if (!typetime.contains(qft.getTypetime())) {
 							it.remove();
 						}
 					}
 				}
-				Collections.sort(tlist, new Comparator<QlyFlyticket>() {
-					public int compare(QlyFlyticket arg0, QlyFlyticket arg1) {
-						if (arg0.getTicketprice() > arg1.getTicketprice()) {
-							return 1;
-						} else if (arg0.getTicketprice() < arg1.getTicketprice()) {
-							return -1;
+				if (teplist.size() > 0) {
+					Collections.sort(teplist, new Comparator<QlyFlyticket>() {
+						public int compare(QlyFlyticket arg0, QlyFlyticket arg1) {
+							if (arg0.getTicketprice() > arg1.getTicketprice()) {
+								return 1;
+							} else if (arg0.getTicketprice() < arg1.getTicketprice()) {
+								return -1;
+							}
+							return 0;
 						}
-						return 0;
+					});
+					if (teplist != null && teplist.size() > 0) {
+						return teplist.get(0);
 					}
-				});
-				if (tlist != null && tlist.size() > 0)
-					return tlist.get(0);
+				}
+				cal.set(Calendar.DAY_OF_MONTH, c.get(Calendar.DAY_OF_MONTH) + (i + 1));
 			}
 		}
 		return null;

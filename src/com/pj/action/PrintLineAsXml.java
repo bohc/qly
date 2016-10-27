@@ -265,6 +265,10 @@ public class PrintLineAsXml extends ActionBase {
 			sbs.append("\r\n<resourceid>").append(ql.getId()).append("</resourceid>");
 			if (ql.getJoinattribute().trim().equals("参团游")) {
 				sbs.append("\r\n<pfunction>").append("group").append("</pfunction>");
+			} else if (ql.getJoinattribute().trim().equals("半自助游")) {
+				sbs.append("\r\n<pfunction>").append("group").append("</pfunction>");
+				sbs.append("\r\n<ext_function>").append("1").append("</ext_function>");
+				sbs.append("\r\n<sub_function>").append("1").append("</sub_function>");
 			} else {
 				sbs.append("\r\n<pfunction>").append("free").append("</pfunction>");
 			}
@@ -1008,7 +1012,7 @@ public class PrintLineAsXml extends ActionBase {
 				continue;
 			}
 			ArrayList<QlyFlyticket> tlist = ((ArrayList<QlyFlyticket>) m.get(cdate));
-			ArrayList<QlyFlyticket> teplist=(ArrayList<QlyFlyticket>) tlist.clone();
+			ArrayList<QlyFlyticket> teplist = (ArrayList<QlyFlyticket>) tlist.clone();
 			if (teplist != null && teplist.size() > 0) {
 				if (typetime != null && typetime.trim().length() > 1) {
 					for (Iterator<QlyFlyticket> it = teplist.iterator(); it.hasNext();) {

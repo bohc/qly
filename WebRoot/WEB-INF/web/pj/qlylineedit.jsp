@@ -97,7 +97,7 @@
 				</tr>
 				<tr>
 					<td class="form-label"><label>参团性质</label></td>
-					<td class="form-content"><s:radio id="joinattribute" cssClass="" name="qlyline.joinattribute" list="#{'参团游':'参团游','自由行':'自由行','团队游':'团队游','自驾游':'自驾游'}" listKey="key" listValue="value" theme="simple"></s:radio></td>
+					<td class="form-content"><s:radio id="joinattribute" cssClass="" name="qlyline.joinattribute" list="#{'参团游':'参团游','自由行':'自由行','半自助游':'半自助游','团队游':'团队游','自驾游':'自驾游'}" listKey="key" listValue="value" theme="simple"></s:radio></td>
 					<td class="form-label"><label>目的地类型</label></td>
 					<td class="form-content"><s:radio id="destinationtype" cssClass="" name="qlyline.destinationtype" list="#{'国内游':'国内游','周边游':'周边游','境外游':'境外游','港奥游':'港奥游','云南游':'云南游'}" listKey="key" listValue="value" theme="simple"></s:radio></td>
 				</tr>

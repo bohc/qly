@@ -156,6 +156,29 @@ BEGIN
 END;
 
 
+--删除线路--
+DELIMITER $$
+USE `qly`$$
+DROP PROCEDURE IF EXISTS `sp_delline`$$
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_delline`(IN lid INT(11),OUT errcode INT(2))
+BEGIN
+    DECLARE nid INT(11);
+    DECLARE t_error INTEGER DEFAULT 0;  
+    DECLARE CONTINUE HANDLER FOR SQLEXCEPTION SET t_error=1; 
+    
+    START TRANSACTION;
+	DELETE FROM qly.`line` WHERE id=lid;
+	DELETE FROM qly.`citytocitypricecustom` WHERE lineid=lid;
+	DELETE FROM qly.`linepic` WHERE lineid=lid;
+	DELETE FROM qly.`linetravel` WHERE ltid=lid;    
+    IF t_error = 1 THEN  
+	ROLLBACK;  
+    ELSE
+        COMMIT;
+    END IF;
+    SELECT t_error INTO errcode;  /*将事务的执行状态返回给被调者*/
+END$$
+DELIMITER ;
 
 
 

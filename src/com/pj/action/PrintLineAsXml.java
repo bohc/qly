@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.base.BaseIni;
 import com.base.ModelBase;
 import com.opensymphony.xwork2.Action;
 import com.pj.bean.QlyCitytocityprice;
@@ -657,7 +658,7 @@ public class PrintLineAsXml extends ActionBase {
 		Map<String, Map<String, Integer>> avgm = new HashMap<String, Map<String, Integer>>();
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		for (int i = 0; i < 60; i++) {
+		for (int i = 0; i < BaseIni.xmlday; i++) {
 
 			int fprice = 0;// 来时大交通费用
 			int backprice = 0;// 回时大交通费用
@@ -835,6 +836,8 @@ public class PrintLineAsXml extends ActionBase {
 			pmap.put(sdf.format(cal.getTime()), pm);
 			cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 			calb.setTime(cal.getTime());
+			System.out.println(sdf.format(cal.getTime()));
+
 		}
 
 		// 取平均价格，以５天为准
@@ -842,7 +845,7 @@ public class PrintLineAsXml extends ActionBase {
 		int a = 0, s_a = 0, s_b = 0;
 		List<String> tlist = new ArrayList<String>();
 		for (Map.Entry<String, Map<String, Object>> entry : resultMap.entrySet()) {
-			if ((a != 0 && a % 5 == 0) || a == 59) {
+			if ((a != 0 && a % 5 == 0) || a == BaseIni.xmlday - 1) {
 				s_a += Integer.parseInt(entry.getValue().get("qunarprice").toString());
 				s_b += Integer.parseInt(entry.getValue().get("JPCDprice").toString());
 				tlist.add(entry.getKey());
@@ -869,11 +872,15 @@ public class PrintLineAsXml extends ActionBase {
 		cal.setTime(new Date());
 		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 		calb.setTime(cal.getTime());
-		for (int i = 0; i < 60; i++) {
+		for (int i = 0; i < BaseIni.xmlday; i++) {
 			Map<String, Object> mp = pmap.get(sdf.format(cal.getTime()));
 			Map<String, Integer> pm = avgm.get(sdf.format(cal.getTime()));
-			if (Integer.parseInt(mp.get("marketprice").toString()) < Integer.parseInt(pm.get("qunarprice").toString())) {
-				mp.put("marketprice", pm.get("qunarprice") + 300);
+			try {
+				if (Integer.parseInt(mp.get("marketprice").toString()) < Integer.parseInt(pm.get("qunarprice").toString())) {
+					mp.put("marketprice", pm.get("qunarprice") + 300);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 			mp.put("qunarprice", pm.get("qunarprice"));
 			mp.put("JPCDprice", pm.get("JPCDprice"));
@@ -992,7 +999,7 @@ public class PrintLineAsXml extends ActionBase {
 		calsub.setTime(c.getTime());
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-		for (int i = 0; i < 60; i++) {
+		for (int i = 0; i < BaseIni.xmlday; i++) {
 			boolean b = false;
 			String cdate = sdf.format(cal.getTime());
 			// 如果当天没有，那么往前面找一天

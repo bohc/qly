@@ -35,6 +35,7 @@ import com.pj.dao.QlyLineDao;
 import com.pj.dao.QlyLinepicDao;
 import com.pj.dao.QlyLinetravelDao;
 import com.pj.dao.QlyViewpicDao;
+import com.util.Config;
 import com.util.QueryLikeUtil;
 
 import sun.security.krb5.internal.CredentialsUtil;
@@ -393,6 +394,18 @@ public class QlyLineAction extends ActionBase {
 	public String genarateLine() throws UnsupportedEncodingException {
 		String sb = "{\"results\":1}";
 		inputStream = new ByteArrayInputStream(sb.getBytes("UTF-8"));
+		return "ajax-success";
+	}
+
+	// 修改properties文件的值
+	public String xmlEdit() {
+		String sb = "{\"results\":1}";
+		BaseIni.xmlday = Integer.parseInt(msg);
+		try {
+			inputStream = new ByteArrayInputStream(sb.getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			sb = "{\"results\":0}";
+		}
 		return "ajax-success";
 	}
 

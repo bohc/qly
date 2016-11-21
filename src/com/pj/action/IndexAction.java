@@ -3,19 +3,21 @@ package com.pj.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.base.BaseIni;
 import com.pj.dao.QlyTbfunctionlistDao;
 
 @SuppressWarnings("serial")
 public class IndexAction extends ActionBase {
-	private String ftype="100";
-	
+	private String ftype = "100";
+
 	public String index() {
 		pagename = "/WEB-INF/index.html";
 		return SUCCESS;
 	}
 
 	public String rightFile() {
-		pagename = "WEB-INF/grid.html";
+		msg = String.valueOf(BaseIni.xmlday);
+		pagename = "WEB-INF/grid.jsp";
 		return SUCCESS;
 	}
 
@@ -36,5 +38,4 @@ public class IndexAction extends ActionBase {
 		this.ftype = ftype;
 	}
 
-	
 }

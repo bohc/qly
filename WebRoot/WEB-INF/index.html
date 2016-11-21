@@ -53,7 +53,7 @@
     
     function opwin(url1,url2){
      	$("#LeftMenu").attr("src",url1);
-     	$("#MainTT").attr("src",url2);
+     	$("#MainIframe").attr("src",url2);
      	return false;
     }
     </script>
@@ -71,7 +71,7 @@
                             </td>
                             <td align="right" valign="bottom">
                                 <ul id="navtop">
-                                    <li><a href="#" onclick="opwin('leftTree.do?remark=4','index!rightFile.do');return false;" class="button" target="Main">首页</a> </li>
+                                    <li><a href="#" onclick="opwin('index!leftFile.do','index!rightFile.do');return false;" class="button" target="Main">首页</a> </li>
                                    	<li><a href="#" class="button" >系统管理</a>
                                         <ul>
                                             <li><a href="index!leftFile.do?ftype=100" target="LeftMenu">系统设置</a></li>

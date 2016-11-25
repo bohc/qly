@@ -277,8 +277,8 @@ public class PrintLineAsXml extends ActionBase {
 			sbs.append("\r\n<day>").append(ql.getDaynum()).append("</day>");
 			sbs.append("\r\n<advanceday>").append(ql.getSign()).append("</advanceday>");
 			sbs.append("\r\n<advancedaytype>").append("工作日").append("</advancedaytype>");
-			sbs.append("\r\n<freetriptotraffic>").append(ql.getComeviehcle()).append("</freetriptotraffic>");
-			sbs.append("\r\n<freetripbacktraffic>").append(ql.getBackviehcle()).append("</freetripbacktraffic>");
+			sbs.append("\r\n<freetriptotraffic>").append(cprice.getTraficaltype()).append("</freetriptotraffic>");
+			sbs.append("\r\n<freetripbacktraffic>").append(cprice.getVehiclebacktype()).append("</freetripbacktraffic>");
 			sbs.append("\r\n<departure>").append(cprice.getFromcityname()).append("</departure>");
 			sbs.append("\r\n<arrive>").append(ql.getPlacename()).append("</arrive>");
 			// 这个参数后面有一个“－”号，要把它去掉

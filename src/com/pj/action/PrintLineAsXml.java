@@ -358,14 +358,12 @@ public class PrintLineAsXml extends ActionBase {
 							}
 						}
 					}
-				} else {
-					continue;
 				}
 
 				// c 表示当前取出的图片有多少张了， t 表示当前取到第几个行程，
 				// v 表示要取出当前景点的第几个图片
 				// 根据图片数量，确定怎么上传图片，如果小于６张，那么取出所有图片，如果大于６张，那么每个景点取一张，循环取，直到取出６张为止
-				if (i > 6) {
+				if (views!=null && i > 6) {
 					// 如果大于６，那图片要重新拼接
 					sbt.setLength(0);
 					int c = 0, t = 0, v = 0, b = 0;

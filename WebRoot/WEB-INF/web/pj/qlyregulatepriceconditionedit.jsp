@@ -39,11 +39,15 @@
 					<td><label>调整分类</label></td>
 					<td><s:select name="qlyregulatepricecondition.difftype"  id="difftype" list="#{'成人价':'成人价','儿童价':'儿童价','房差':'房差'}" listKey="key" listValue="value" ></s:select></td>
 					<td><label>调整价格</label></td>
-					<td><s:textfield name="qlyregulatepricecondition.price" id="price" ></s:textfield></td>
+					<td><s:textfield name="qlyregulatepricecondition.price" id="price" /></td>
 					<td><label>开始时间</label></td>
 					<td><s:textfield name="qlyregulatepricecondition.startdate" id="startdate" ></s:textfield></td>
 					<td><label>结束时间</label></td>
 					<td><s:textfield name="qlyregulatepricecondition.enddate" id="enddate" ></s:textfield></td>
+				</tr>
+				<tr>
+					<td><label>调整价格</label></td>
+					<td colspan="7"><s:textarea name="qlyregulatepricecondition.dprice" id="dprice" cssStyle="width:100%;height:300px;"></s:textarea></td>
 				</tr>
 			</table>
 		    <p class="form-opt">

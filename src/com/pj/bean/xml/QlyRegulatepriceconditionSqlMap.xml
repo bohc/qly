@@ -2,12 +2,13 @@
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 
 <sqlMap namespace="qlyregulatepricecondition">
-  <sql id="bhc_selectByPrimaryKey">select p.id id,p.lineid lineid,p.price price,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p where id = #id:INT#</sql>
-  <sql id="bhc_insert">insert into qly.regulatepricecondition(lineid,difftype,price,startdate,enddate) values (#lineid:INT#,#difftype:VARCHAR#,#price:INT#,#startdate:DATE#,#enddate:DATE#)</sql>
+  <sql id="bhc_selectByPrimaryKey">select p.id id,p.lineid lineid,p.price price,p.dprice dprice,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p where id = #id:INT#</sql>
+  <sql id="bhc_insert">insert into qly.regulatepricecondition(lineid,difftype,price,dprice,startdate,enddate) values (#lineid:INT#,#difftype:VARCHAR#,#price:INT#,#dprice:VARCHAR#,#startdate:DATE#,#enddate:DATE#)</sql>
   <sql id="bhc_update">update qly.regulatepricecondition 
     <dynamic prepend="set"> 
       <isNotEmpty prepend="," property="lineid">lineid = #lineid:INT#</isNotEmpty>  
       <isNotEmpty prepend="," property="price">price = #price:INT#</isNotEmpty>  
+      <isNotEmpty prepend="," property="dprice">dprice = #dprice:VARCHAR#</isNotEmpty>  
       <isNotEmpty prepend="," property="difftype">difftype = #difftype:VARCHAR#</isNotEmpty>  
       <isNotEmpty prepend="," property="startdate">startdate = #startdate:DATE#</isNotEmpty>  
       <isNotEmpty prepend="," property="enddate">enddate = #enddate:DATE#</isNotEmpty> 
@@ -17,7 +18,7 @@
   <sql id="bhc_delete_batch">delete from qly.regulatepricecondition where id in 
     <iterate conjunction="," open="(" close=")" property="plist">#plist[]#</iterate>
   </sql>
-  <sql id="bhc_getAllList">select p.id id,p.lineid lineid,p.price price,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p 
+  <sql id="bhc_getAllList">select p.id id,p.lineid lineid,p.price price,p.dprice dprice,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p 
     <dynamic prepend=" where ">
     	<isNotEmpty prepend="and" property="lineid"> lineid=$lineid$ </isNotEmpty>
     </dynamic>  
@@ -28,7 +29,7 @@
     	<isNotEmpty prepend="and" property="lineid"> lineid=$lineid$ </isNotEmpty>
     </dynamic> 
   </sql>
-  <sql id="bhc_getAllListSelect">select p.id id,p.lineid lineid,p.price price,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p 
+  <sql id="bhc_getAllListSelect">select p.id id,p.lineid lineid,p.price price,p.dprice dprice,p.difftype difftype,p.startdate startdate,p.enddate enddate from qly.regulatepricecondition p 
     <dynamic prepend=" where "></dynamic>  
     <include refid="ordermodel.order"/>
   </sql>

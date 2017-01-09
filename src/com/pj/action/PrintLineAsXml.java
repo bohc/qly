@@ -642,11 +642,10 @@ public class PrintLineAsXml extends ActionBase {
 		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 		calb.setTime(cal.getTime());
 
-		// 取得线路的浮动价格
-		sql = "extqlyregulatepricecondition.bhc_getAllByLineid";
-		QlyRegulatepricecondition qrd = new QlyRegulatepricecondition();
-		qrd.setLineid(ql.getId());
-		List<?> rlist = QlyRegulatepriceconditionDao.getInstence().getList(sql, qrd);
+		// 自定义的浮动价格
+		// 成人价，儿童价，房差的调整价格
+		Map<String, Map<String, Object>> floatPrice = new HashMap<String, Map<String, Object>>();
+		getFloatPrice(ql.getId(), floatPrice);
 
 		int bprice = ql.getLineprice();// 线路价格
 		int childrenprice = ql.getChildprice();// 儿童价格
@@ -790,24 +789,19 @@ public class PrintLineAsXml extends ActionBase {
 			// 自定义的浮动价格
 			// 成人价，儿童价，房差的调整价格
 			int dadultprice = 0, dchildreprice = 0, droomdiffprice = 0;
-			if (rlist != null && rlist.size() > 0) {
+			if (floatPrice != null && floatPrice.size() > 0) {
 				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-				for (int f = 0; f < rlist.size(); f++) {
-					QlyRegulatepricecondition qr = (QlyRegulatepricecondition) rlist.get(f);
-					try {
-						Date ld = df.parse(df.format(cal.getTime()));
-						Date ds = df.parse(df.format(qr.getStartdate()));
-						Date de = df.parse(df.format(qr.getEnddate()));
-						if (ld.getTime() >= ds.getTime() && ld.getTime() <= de.getTime()) {
-							if (qr.getDifftype().trim().equals("成人价")) {
-								dadultprice += qr.getPrice();
-							} else if (qr.getDifftype().trim().equals("儿童价")) {
-								dchildreprice += qr.getPrice();
-							} else if (qr.getDifftype().trim().equals("房差")) {
-								droomdiffprice += qr.getPrice();
-							}
-						}
-					} catch (ParseException e) {
+				String dfdate = df.format(cal.getTime());
+				if (floatPrice.containsKey(dfdate)) {
+					Map<String, Object> pm = floatPrice.get(dfdate);
+					if (pm.containsKey("dadultprice")) {
+						dadultprice = Integer.parseInt(pm.get("dadultprice").toString());
+					}
+					if (pm.containsKey("dchildreprice")) {
+						dchildreprice = Integer.parseInt(pm.get("dchildreprice").toString());
+					}
+					if (pm.containsKey("droomdiffprice")) {
+						droomdiffprice = Integer.parseInt(pm.get("droomdiffprice").toString());
 					}
 				}
 			}
@@ -915,6 +909,74 @@ public class PrintLineAsXml extends ActionBase {
 		}
 		sbs.append("</teams>");
 		return timeflag == null ? "" : timeflag;
+	}
+
+	private void getFloatPrice(int lineid, Map<String, Map<String, Object>> floatPrice) {
+		// 取得线路的浮动价格
+		sql = "extqlyregulatepricecondition.bhc_getAllByLineid";
+		QlyRegulatepricecondition qrd = new QlyRegulatepricecondition();
+		qrd.setLineid(lineid);
+		List<?> rlist = QlyRegulatepriceconditionDao.getInstence().getList(sql, qrd);
+		if (rlist != null && rlist.size() > 0) {
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			for (int f = 0; f < rlist.size(); f++) {
+				QlyRegulatepricecondition qr = (QlyRegulatepricecondition) rlist.get(f);
+				try {
+					if (qr.getDprice() == null || qr.getDprice().trim().equals("")) {// 如果没有指定按天调整,那么按时间段调整
+						Date ds = df.parse(df.format(qr.getStartdate()));
+						Date de = df.parse(df.format(qr.getEnddate()));
+						long disdate = (de.getTime() - ds.getTime()) / (1000 * 60 * 60 * 24);
+						if (disdate > 0) {
+							for (int i = 0; i < disdate; i++) {
+								combineFloatPrice(floatPrice, qr.getDifftype(), df.format(ds), qr.getPrice());
+							}
+						}
+					} else {
+						String dprices = qr.getDprice();
+						String dprice[] = dprices.split("\r\n");
+						if (dprice != null && dprice.length > 0) {
+							for (int p = 0; p < dprice.length; p++) {
+								String dps[] = dprice[p].split(":");
+								if (dps != null && dps.length == 2) {
+									combineFloatPrice(floatPrice, qr.getDifftype(), dps[0], Integer.parseInt(dps[1]));
+								}
+							}
+						}
+					}
+				} catch (ParseException e) {
+				}
+			}
+		}
+	}
+
+	// 把浮动线路价格放到一个map里面
+	private void combineFloatPrice(Map<String, Map<String, Object>> floatPrice, String stype, String dfdate, int price) {
+		Map<String, Object> tmap;
+		if (floatPrice.containsKey(dfdate)) {
+			tmap = floatPrice.get(dfdate);
+		} else {
+			tmap = new HashMap<String, Object>();
+			floatPrice.put(dfdate, tmap);
+		}
+		if (stype.trim().equals("成人价")) {
+			if (tmap.containsKey("dadultprice")) {
+				tmap.put("dadultprice", Integer.parseInt(tmap.get("dadultprice").toString()) + price);
+			} else {
+				tmap.put("dadultprice", price);
+			}
+		} else if (stype.trim().equals("儿童价")) {
+			if (tmap.containsKey("dchildreprice")) {
+				tmap.put("dchildreprice", Integer.parseInt(tmap.get("dchildreprice").toString()) + price);
+			} else {
+				tmap.put("dchildreprice", price);
+			}
+		} else if (stype.trim().equals("房差")) {
+			if (tmap.containsKey("droomdiffprice")) {
+				tmap.put("droomdiffprice", Integer.parseInt(tmap.get("droomdiffprice").toString()) + price);
+			} else {
+				tmap.put("droomdiffprice", price);
+			}
+		}
 	}
 
 	/**

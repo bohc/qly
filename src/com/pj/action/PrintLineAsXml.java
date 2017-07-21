@@ -363,7 +363,7 @@ public class PrintLineAsXml extends ActionBase {
 				// c 表示当前取出的图片有多少张了， t 表示当前取到第几个行程，
 				// v 表示要取出当前景点的第几个图片
 				// 根据图片数量，确定怎么上传图片，如果小于６张，那么取出所有图片，如果大于６张，那么每个景点取一张，循环取，直到取出６张为止
-				if (views!=null && i > 6) {
+				if (views != null && i > 6) {
 					// 如果大于６，那图片要重新拼接
 					sbt.setLength(0);
 					int c = 0, t = 0, v = 0, b = 0;
@@ -640,20 +640,30 @@ public class PrintLineAsXml extends ActionBase {
 		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 		calb.setTime(cal.getTime());
 
+		/** ================================================== */
+		/** 在新的代码中没有找到 */
 		// 取得线路的浮动价格
-		sql = "extqlyregulatepricecondition.bhc_getAllByLineid";
-		QlyRegulatepricecondition qrd = new QlyRegulatepricecondition();
-		qrd.setLineid(ql.getId());
-		List<?> rlist = QlyRegulatepriceconditionDao.getInstence().getList(sql, qrd);
+		// sql = "extqlyregulatepricecondition.bhc_getAllByLineid";
+		// QlyRegulatepricecondition qrd = new QlyRegulatepricecondition();
+		// qrd.setLineid(ql.getId());
+		// List<?> rlist =
+		// QlyRegulatepriceconditionDao.getInstence().getList(sql, qrd);
+		/** ================================================== */
+
+		/** ================================================== */
+		// 这一段是新加入的
+		Map<String, Map<String, Object>> floatPrice = new HashMap();
+		getFloatPrice(ql.getId().intValue(), floatPrice);
+		/** ================================================== */
 
 		int bprice = ql.getLineprice();// 线路价格
 		int childrenprice = ql.getChildprice();// 儿童价格
 		int marketprice = 0;
 		Random r = new Random(new Date().getTime());
 
-		Map<String, Map<String, Object>> pmap = new TreeMap<String, Map<String, Object>>();
+		Map<String, Map<String, Object>> pmap = new TreeMap<>();
 
-		Map<String, Map<String, Integer>> avgm = new HashMap<String, Map<String, Integer>>();
+		Map<String, Map<String, Integer>> avgm = new HashMap<>();
 
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		for (int i = 0; i < BaseIni.xmlday; i++) {
@@ -706,7 +716,7 @@ public class PrintLineAsXml extends ActionBase {
 					} else {
 						// 如果是飞机，那么调用相应城市的航班价格
 						// 取得这两个城市之间的 来程 的机票
-						Map<String, List<QlyFlyticket>> s = new HashMap<String, List<QlyFlyticket>>();
+						Map<String, List<QlyFlyticket>> s = new HashMap<>();
 						// 取得这两个城市之间的 返程 的机票
 						if (ep.getS() == null && ep.getD() == null) {
 							// 如果在前面没有取到航班，那么到数据库，然后保存在内存中
@@ -719,7 +729,7 @@ public class PrintLineAsXml extends ActionBase {
 						// 把日期设置为当前循环到的日期
 						Calendar ctime = Calendar.getInstance();
 						ctime.setTime(cal.getTime());
-						ctime.set(Calendar.DAY_OF_MONTH, ctime.get(Calendar.DAY_OF_MONTH) + ep.getDayno());// 按时间，把航班的时间设置为线路当天行程的航班时间
+						ctime.set(Calendar.DAY_OF_MONTH, ctime.get(Calendar.DAY_OF_MONTH) + (ep.getDayno() - 1));// 按时间，把航班的时间设置为线路当天行程的航班时间
 
 						// 把当天的航班分早中下晚四个时间段取出来
 						Map<Integer, String> mk = new HashMap<Integer, String>();
@@ -788,27 +798,60 @@ public class PrintLineAsXml extends ActionBase {
 			// 自定义的浮动价格
 			// 成人价，儿童价，房差的调整价格
 			int dadultprice = 0, dchildreprice = 0, droomdiffprice = 0;
-			if (rlist != null && rlist.size() > 0) {
+			/**
+			 * ================================================================
+			 */
+			// 没有的
+			// if (rlist != null && rlist.size() > 0) {
+			// SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			// for (int f = 0; f < rlist.size(); f++) {
+			// QlyRegulatepricecondition qr = (QlyRegulatepricecondition)
+			// rlist.get(f);
+			// try {
+			// Date ld = df.parse(df.format(cal.getTime()));
+			// Date ds = df.parse(df.format(qr.getStartdate()));
+			// Date de = df.parse(df.format(qr.getEnddate()));
+			// if (ld.getTime() >= ds.getTime() && ld.getTime() <= de.getTime())
+			// {
+			// if (qr.getDifftype().trim().equals("成人价")) {
+			// dadultprice += qr.getPrice();
+			// } else if (qr.getDifftype().trim().equals("儿童价")) {
+			// dchildreprice += qr.getPrice();
+			// } else if (qr.getDifftype().trim().equals("房差")) {
+			// droomdiffprice += qr.getPrice();
+			// }
+			// }
+			// } catch (ParseException e) {
+			// }
+			// }
+			// }
+			/**
+			 * ================================================================
+			 */
+
+			/**
+			 * ================================================================
+			 */
+			// 增加的
+			if ((floatPrice != null) && (floatPrice.size() > 0)) {
 				SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-				for (int f = 0; f < rlist.size(); f++) {
-					QlyRegulatepricecondition qr = (QlyRegulatepricecondition) rlist.get(f);
-					try {
-						Date ld = df.parse(df.format(cal.getTime()));
-						Date ds = df.parse(df.format(qr.getStartdate()));
-						Date de = df.parse(df.format(qr.getEnddate()));
-						if (ld.getTime() >= ds.getTime() && ld.getTime() <= de.getTime()) {
-							if (qr.getDifftype().trim().equals("成人价")) {
-								dadultprice += qr.getPrice();
-							} else if (qr.getDifftype().trim().equals("儿童价")) {
-								dchildreprice += qr.getPrice();
-							} else if (qr.getDifftype().trim().equals("房差")) {
-								droomdiffprice += qr.getPrice();
-							}
-						}
-					} catch (ParseException e) {
+				String dfdate = df.format(cal.getTime());
+				if (floatPrice.containsKey(dfdate)) {
+					Map<String, Object> pm = (Map) floatPrice.get(dfdate);
+					if (pm.containsKey("dadultprice")) {
+						dadultprice = Integer.parseInt(pm.get("dadultprice").toString());
+					}
+					if (pm.containsKey("dchildreprice")) {
+						dchildreprice = Integer.parseInt(pm.get("dchildreprice").toString());
+					}
+					if (pm.containsKey("droomdiffprice")) {
+						droomdiffprice = Integer.parseInt(pm.get("droomdiffprice").toString());
 					}
 				}
 			}
+			/**
+			 * ================================================================
+			 */
 
 			Map<String, Object> pm = new HashMap<String, Object>();
 			pm.put("flightprice", approximate(fprice + backprice));
@@ -913,6 +956,72 @@ public class PrintLineAsXml extends ActionBase {
 		}
 		sbs.append("</teams>");
 		return timeflag == null ? "" : timeflag;
+	}
+
+	private void getFloatPrice(int lineid, Map<String, Map<String, Object>> floatPrice) {
+		this.sql = "extqlyregulatepricecondition.bhc_getAllByLineid";
+		QlyRegulatepricecondition qrd = new QlyRegulatepricecondition();
+		qrd.setLineid(Integer.valueOf(lineid));
+		List<?> rlist = QlyRegulatepriceconditionDao.getInstence().getList(this.sql, qrd);
+		if ((rlist != null) && (rlist.size() > 0)) {
+			SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+			for (int f = 0; f < rlist.size(); f++) {
+				QlyRegulatepricecondition qr = (QlyRegulatepricecondition) rlist.get(f);
+				try {
+					if ((qr.getDprice() == null) || (qr.getDprice().trim().equals(""))) {
+						Date ds = df.parse(df.format(qr.getStartdate()));
+						Date de = df.parse(df.format(qr.getEnddate()));
+						long disdate = (de.getTime() - ds.getTime()) / 86400000L;
+						if (disdate > 0L) {
+							for (int i = 0; i < disdate; i++) {
+								combineFloatPrice(floatPrice, qr.getDifftype(), df.format(ds), qr.getPrice().intValue());
+							}
+						}
+					} else {
+						String dprices = qr.getDprice();
+						String[] dprice = dprices.split("\r\n");
+						if ((dprice != null) && (dprice.length > 0)) {
+							for (int p = 0; p < dprice.length; p++) {
+								String[] dps = dprice[p].split(":");
+								if ((dps != null) && (dps.length == 2)) {
+									combineFloatPrice(floatPrice, qr.getDifftype(), dps[0], Integer.parseInt(dps[1]));
+								}
+							}
+						}
+					}
+				} catch (ParseException localParseException) {
+				}
+			}
+		}
+	}
+
+	private void combineFloatPrice(Map<String, Map<String, Object>> floatPrice, String stype, String dfdate, int price) {
+		Map<String, Object> tmap;
+		if (floatPrice.containsKey(dfdate)) {
+			tmap = (Map) floatPrice.get(dfdate);
+		} else {
+			tmap = new HashMap();
+			floatPrice.put(dfdate, tmap);
+		}
+		if (stype.trim().equals("成人价")) {
+			if (tmap.containsKey("dadultprice")) {
+				tmap.put("dadultprice", Integer.valueOf(Integer.parseInt(tmap.get("dadultprice").toString()) + price));
+			} else {
+				tmap.put("dadultprice", Integer.valueOf(price));
+			}
+		} else if (stype.trim().equals("儿童价")) {
+			if (tmap.containsKey("dchildreprice")) {
+				tmap.put("dchildreprice", Integer.valueOf(Integer.parseInt(tmap.get("dchildreprice").toString()) + price));
+			} else {
+				tmap.put("dchildreprice", Integer.valueOf(price));
+			}
+		} else if (stype.trim().equals("房差")) {
+			if (tmap.containsKey("droomdiffprice")) {
+				tmap.put("droomdiffprice", Integer.valueOf(Integer.parseInt(tmap.get("droomdiffprice").toString()) + price));
+			} else {
+				tmap.put("droomdiffprice", Integer.valueOf(price));
+			}
+		}
 	}
 
 	/**

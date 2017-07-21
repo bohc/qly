@@ -24,6 +24,8 @@ public class QlyRegulatepricecondition extends ModelBase implements Serializable
 	 * 调整价格
 	 */
 	private Integer price;
+	// 按日期逐天调整
+	private String dprice;
 	/**
 	 * 调整价格分类
 	 */
@@ -59,6 +61,14 @@ public class QlyRegulatepricecondition extends ModelBase implements Serializable
 
 	public Integer getPrice() {
 		return this.price;
+	}
+
+	public String getDprice() {
+		return dprice;
+	}
+
+	public void setDprice(String dprice) {
+		this.dprice = dprice;
 	}
 
 	public String getDifftype() {
